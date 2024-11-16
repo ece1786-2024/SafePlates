@@ -1,10 +1,7 @@
 from openai import OpenAI
 
 # Initialize OpenAI client
-# client = OpenAI(api_key='your_api_key_here')  # Replace with your API key
-
-client = OpenAI(api_key='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')
-
+client = OpenAI(api_key='your_api_key_here')  # Replace with your API key
 
 def generator(dish_name, original_recipe, allergic_ingredients):
     # Create the prompt based on whether an original recipe was provided
