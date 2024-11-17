@@ -1,11 +1,13 @@
 import openai
 import os
 from openai import OpenAI
+
 def generator(dish_name, original_recipe="", restrictions=""):
     """
     Generates a safe recipe based on the original recipe and user restrictions.
 
     Parameters:
+    - Dish name (str)
     - original_recipe (str): The original recipe text.
     - restrictions (str): User restrictions (allergies, dietary needs).
 
@@ -13,19 +15,20 @@ def generator(dish_name, original_recipe="", restrictions=""):
     - new_recipe (str): The modified recipe that adheres to the restrictions.
     """
     prompt = f"""
-    You are a culinary expert. Given the original dish name and recipe below and the user's restrictions, modify the recipe to make it safe for the user while maintaining the original flavor and nature of the dish.
-    If there is not Original Recipe provided, generate the recipe based on the dish name.
+    Given the following information:
 
-    ###Dish_name:
+    **Dish Name:**
     {dish_name}
 
-    ### Original Recipe:
-    {original_recipe}
+    **Original Recipe:**
+    {original_recipe if original_recipe else "N/A"}
 
-    ### User Restrictions:
+    **User Specifications:**
     {restrictions}
 
-    ### Modified Recipe:
+    Please provide a modified recipe that adheres to the user's specifications and restrictions, such as accommodate users' dietary restrictions or allergies. 
+    Include a list of ingredients and detailed preparation steps. Ensure that the modified recipe is safe for the user and maintains the original flavor and characteristics of the dish as much as possible. 
+    If no original recipe is provided, generate a new recipe based on the dish name and user specifications.
     """
     client = OpenAI()
     try:
