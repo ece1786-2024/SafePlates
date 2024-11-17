@@ -63,11 +63,26 @@ def generator(dish_name, original_recipe="", restrictions=""):
         return f"An error occurred during recipe generation: {str(e)}"
 
 
-def evaluator(original_recipe, modified_recipe, restrictions):
+def evaluator(dish_name, original_recipe, modified_recipe, restrictions):
     prompt = f"""
-    Evaluate the modified recipe below to ensure it adheres to the user's restrictions and makes sense. Provide feedback on its safety and reasonableness.
-    Output 1 if the recipe is safe and acceptable;
-    Output 0 if the recipe is not safe or not realistic or  taste totally different compared to the original recipe.
+    I will provide you with:
+        1.	A dish name.
+        2.	A specific requirement (e.g., dietary restriction or allergy).
+        3.	An original recipe corresponding to the dish name (including ingredients and cooking steps).
+        4.	A modified recipe that attempts to adjust the original recipe based on the requirement.
+    Your task is to determine if the modified recipe is valid. Follow these steps to evaluate the validity:
+    •  Edibility and Nutritional Sense: Ensure the modified recipe produces a dish that is edible and nutritionally coherent. For example, replacing "butter chicken" with "butter cheese" is invalid if it results in a dish that is unbalanced or nonsensical.
+    •  Ingredient Safety: Ensure that the substituted ingredients:
+        •	Are safe to consume individually and in combination.
+        •	Do not pose cross-contamination risks, especially in recipes tailored for allergies. For example, in a nut-free recipe, substitutions must explicitly be certified nut-free. If no explicit certification is provided, assume potential contamination and classify the recipe as invalid.
+    •  Requirement Fulfillment: Confirm that the specific requirement is fully satisfied. Examples include:
+        •	For allergies, substitutions must not only replace triggering ingredients but also prevent cross-reactivity or contamination risks. This must be explicitly verified (e.g., “certified nut-free”). If not explicitly stated, assume any potential risk as real risk.
+        •	For dietary restrictions, ensure all ingredients comply with the stated guidelines.
+    •  Cooking Steps: Evaluate whether the steps are logical and feasible with the modified ingredients.
+    If the modified recipe passes all checks, the answer is simply “Yes” (valid modification). If any check fails, the answer starts with “No”, followed by an explanation of why it is not valid in a separate paragraph. Avoid any additional evaluation or commentary.
+    
+    ### Dish Name:
+    {dish_name}
 
     ### Original Recipe:
     {original_recipe}
@@ -108,6 +123,16 @@ def evaluator(original_recipe, modified_recipe, restrictions):
         ]
         )
         evaluation = completion.choices[0].message.content.strip()
-        return int(evaluation)
+        return evaluation
     except Exception as e:
         return f"An error occurred during recipe evaluation: {str(e)}"
+
+
+def agent_flow(dish_name, original_recipe, restrictions):
+    new_recipe = generator(dish_name, original_recipe, restrictions)
+    evaluation = evaluator(dish_name, original_recipe, new_recipe, restrictions)
+
+    if evaluation.lower().startswith("yes"):
+        return new_recipe
+    else:
+        return "No valid substitution available"
