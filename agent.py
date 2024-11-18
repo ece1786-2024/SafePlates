@@ -64,7 +64,7 @@ def generator(dish_name, original_recipe="", restrictions=""):
 
 
 def evaluator(dish_name, original_recipe, modified_recipe, restrictions):
-    prompt = f"""
+    system_prompt = f"""
     I will provide you with:
         1.	A dish name.
         2.	A specific requirement (e.g., dietary restriction or allergy).
@@ -80,7 +80,9 @@ def evaluator(dish_name, original_recipe, modified_recipe, restrictions):
         •	For dietary restrictions, ensure all ingredients comply with the stated guidelines.
     •  Cooking Steps: Evaluate whether the steps are logical and feasible with the modified ingredients.
     If the modified recipe passes all checks, the answer is simply “Yes” (valid modification). If any check fails, the answer starts with “No”, followed by an explanation of why it is not valid in a separate paragraph. Avoid any additional evaluation or commentary.
-    
+    """
+
+    user_prompt = f"""
     ### Dish Name:
     {dish_name}
 
@@ -93,7 +95,6 @@ def evaluator(dish_name, original_recipe, modified_recipe, restrictions):
     ### User Restrictions:
     {restrictions}
 
-    ### Evaluation:
     """
     client = OpenAI()
 
@@ -106,7 +107,7 @@ def evaluator(dish_name, original_recipe, modified_recipe, restrictions):
           "content": [
             {
               "type": "text",
-              "text": "You are a food safety expert and culinary critic."
+              "text": system_prompt
               
             }
           ]
@@ -116,7 +117,7 @@ def evaluator(dish_name, original_recipe, modified_recipe, restrictions):
           "content": [
             {
               "type": "text",
-              "text": prompt
+              "text": user_prompt
             }
                     ]
         }
@@ -132,7 +133,8 @@ def agent_flow(dish_name, original_recipe, restrictions):
     new_recipe = generator(dish_name, original_recipe, restrictions)
     evaluation = evaluator(dish_name, original_recipe, new_recipe, restrictions)
 
-    if evaluation.lower().startswith("yes"):
-        return new_recipe
-    else:
-        return "No valid substitution available"
+    # if evaluation.lower().startswith("yes"):
+    #     return new_recipe
+    # else:
+    #     return "No valid substitution available"
+    return evaluation
