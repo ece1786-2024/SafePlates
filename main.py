@@ -3,7 +3,7 @@ from openai import OpenAI
 import time
 import gradio as gr
 
-from agent import generator
+from agent import generator, evaluator, agent_flow
 from test_cases import test_cases
 
 
@@ -37,40 +37,116 @@ def command_line_UI():
 
 
 # Gradio interface
-def gradio_interface(dish_name, original_recipe, allergic_ingredients):
-    substituted_recipe = generator(dish_name, original_recipe, allergic_ingredients)
+def generate_in_gradio(dish_name, original_recipe, allergic_ingredients):
+    substituted_recipe = agent_flow(dish_name, original_recipe, allergic_ingredients)
     return substituted_recipe
 
 
 def web_UI():
-    # Load your logo image file
+    # Path to your logo image file
     logo_path = "image/logo-removebg-preview.png"  # Replace with the actual path to your logo file
 
-    # Create the Gradio app
-    with gr.Blocks() as app:
-        gr.Image(logo_path, elem_id="logo", label="SafePlates", height=150, width=150)  # Adjust the height as needed
-        gr.Markdown("<h2 style='text-align: center;'>Allergic Ingredients Substitution</h2>")
+    # Custom CSS for styling buttons and textboxes
+    css = """
+    .gradio-container {background-color: #DBE8B4}
+    
+    #logo {
+        display: block;
+        margin: 0 auto; /* Center the logo horizontally */
+        max-width: 100%; /* Ensure the logo doesn't overflow */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+    #submit_button {
+        background-color: #6EB05A; /* Blue background */
+        color: white; /* White text */
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
 
+    #submit_button:hover {
+        background-color: #468915; /* Darker blue on hover */
+    }
+
+    .gr-textbox {
+        border: 2px solid #007bff; /* Blue border */
+        border-radius: 5px;
+    }
+
+    .gr-textbox input {
+        color: #333; /* Text color */
+    }
+
+    .gr-textbox input:focus {
+        border-color: #0056b3; /* Darker blue on focus */
+        box-shadow: 0 0 5px #0056b3; /* Glow effect on focus */
+    }
+    """
+
+    # Create the Gradio app
+    with gr.Blocks(css=css) as app:
+        # Header Section
+        with gr.Column(elem_id="header", elem_classes=["center"]):
+            gr.Image(logo_path, elem_id="logo", height=200, width=200)  # Logo at the top
+            gr.Markdown(
+                "<h1 style='text-align: center; font-size: 36px;'>Allergic Ingredients Substitution</h1>"
+            )
+
+        # Input Section
         with gr.Row():
             with gr.Column():
-                dish_name = gr.Textbox(label="Dish Name", placeholder="Enter the dish name")
+                gr.Markdown(
+                    "<h3 style='text-align: center; font-size: 24px;'>Input Details</h3>"
+                )
+                dish_name = gr.Textbox(label="Dish Name", placeholder="Enter the dish name", lines=1)
+
+                # Checkbox and Original Recipe Section
+                use_original_recipe = gr.Checkbox(label="Do you want to input an original recipe?")
                 original_recipe = gr.Textbox(label="Original Recipe",
-                                             placeholder="Enter the original recipe (optional)")
-                allergic_ingredients = gr.Textbox(label="Allergic Ingredients",
-                                                  placeholder="Enter ingredients to substitute (separate by commas)")
+                                             placeholder="Enter the original recipe",
+                                             lines=3, visible=False)
 
-        submit_button = gr.Button("Generate Substituted Recipe")
-        output = gr.Textbox(label="Substituted Recipe")
+                def toggle_textbox(use_recipe):
+                    if use_recipe:
+                        return gr.update(visible=True), ""
+                    return gr.update(visible=False), "If you want to input an original recipe, check the box above."
 
-        # Define the action on button click
-        submit_button.click(fn=gradio_interface, inputs=[dish_name, original_recipe, allergic_ingredients],
+                use_original_recipe.change(
+                    fn=toggle_textbox,
+                    inputs=[use_original_recipe],
+                    outputs=[original_recipe, gr.Text(label="", interactive=False)]
+                )
+
+                allergic_ingredients = gr.Textbox(
+                    label="Allergic Ingredients",
+                    placeholder="Enter ingredients to substitute (comma-separated)",
+                    lines=2
+                )
+
+        # Submit button
+        with gr.Row():
+            submit_button = gr.Button("Generate Substituted Recipe", elem_id="submit_button")
+
+        # Output Section
+        with gr.Column(elem_id="output_section", elem_classes=["center"]):
+            gr.Markdown(
+                "<h3 style='text-align: center; font-size: 24px;'>Substituted Recipe</h3>"
+            )
+            output = gr.Textbox(label="", interactive=False, lines=6)
+
+        # Define button click action
+        submit_button.click(fn=generate_in_gradio, inputs=[dish_name, original_recipe, allergic_ingredients],
                             outputs=output)
 
-    # Run the app
+    # Launch the app
     app.launch()
 
 
-def run_test_case(output_file="test_case_results.txt"):
+def run_test_case(output_file="validated_test_case_results.txt"):
     # Open the file with UTF-8 encoding
     with open(output_file, "w", encoding="utf-8") as file:
         for i, test_case in enumerate(test_cases):
@@ -100,14 +176,14 @@ def run_test_case(output_file="test_case_results.txt"):
             file.write(f"Allergic Ingredients: {allergic_ingredients}\n")
             print(f"Allergic Ingredients: {allergic_ingredients}")
 
-            # Generate the substituted recipe
-            substituted_recipe = generator(dish_name, original_recipe, allergic_ingredients)
+            # Generate the substituted recipe after evaluated by the validator
+            validated_substituted_recipe = agent_flow(dish_name, original_recipe, allergic_ingredients)
 
             # Print and write substituted recipe to the file
-            file.write("\nSubstituted Recipe:\n")
-            file.write(f"{substituted_recipe}\n")
-            print("\nSubstituted Recipe:")
-            print(substituted_recipe)
+            file.write("\nValidated Substituted Recipe:\n")
+            file.write(f"{validated_substituted_recipe}\n")
+            print("\nValidated Substituted Recipe:")
+            print(validated_substituted_recipe)
             print("-" * 50)
             file.write("-" * 50 + "\n")
 
@@ -119,7 +195,7 @@ if __name__ == "__main__":
     # command_line_UI()
 
     # uncomment this for the website-based UI
-    # web_UI()
+    web_UI()
 
     # uncomment this to run the provided test cases
-    run_test_case()
+    # run_test_case()

@@ -126,5 +126,5 @@ def agent_flow(dish_name, original_recipe, restrictions):
     #     return new_recipe
     # else:
     #     return "No valid substitution available"
-    return new_recipe + "\n\n" + evaluation
+    return f"The newly generated recipe based on your restrictions is:\n\n{new_recipe}\n\nEvaluation of the recipe:\n{evaluation}"
 
