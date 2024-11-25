@@ -1,0 +1,211 @@
+Test Case 1:
+Dish Name: Lasagna
+Original Recipe Ingredients:
+12 lasagna noodles, 1 lb ground beef, 1 jar marinara sauce, 16 oz ricotta cheese, 3 cups shredded mozzarella cheese, 1/2 cup grated Parmesan cheese, 1 egg, 2 cloves garlic (minced), 1 tbsp olive oil, 1 tsp dried oregano, 1 tsp salt, 1 tsp pepper
+Original Recipe Instructions:
+1. Preheat oven to 375°F (190°C). Cook lasagna noodles according to package instructions. 2. In a skillet, heat olive oil and sauté garlic until fragrant. Add ground beef and cook until browned. 3. Stir in marinara sauce, oregano, salt, and pepper; simmer for 10 minutes. 4. In a bowl, mix ricotta cheese, egg, Parmesan, and 1 cup of mozzarella. 5. Layer the lasagna: spread sauce on the bottom of a baking dish, add noodles, spread ricotta mixture, add mozzarella, and repeat. Top with remaining mozzarella. 6. Cover with foil and bake for 25 minutes, then uncover and bake for another 15 minutes until golden.
+Allergic Ingredients: lasagna noodles, ricotta cheese, Parmesan cheese
+
+Substituted Recipe:
+To create a delicious and inclusive lasagna dish while avoiding the specified allergens—lasagna noodles, ricotta cheese, and Parmesan cheese—we'll provide suitable substitutions that maintain the authenticity and flavor of the original recipe. Here's the modified recipe:
+
+### Ingredients:
+- **12 gluten-free lasagna noodles** (substitute for regular lasagna noodles)
+- **1 lb ground turkey** (to reduce saturated fat compared to beef)
+- **1 jar marinara sauce** (ensure it's gluten-free if needed)
+- **16 oz silken tofu** (substitute for ricotta cheese)
+- **3 cups shredded dairy-free mozzarella-style cheese** (substitute for mozzarella cheese)
+- **½ cup nutritional yeast** (substitute for Parmesan cheese to add a cheesy flavor)
+- **1 egg** (or a flax egg substitute for egg-free; mix 1 tbsp ground flaxseed with 2.5 tbsp water)
+- **2 cloves garlic (minced)**
+- **1 tbsp olive oil**
+- **1 tsp dried oregano**
+- **1 tsp salt**
+- **1 tsp pepper**
+- **½ cup fresh basil leaves (optional, for added flavor and color)**
+
+### Instructions:
+1. **Preheat Oven:** Preheat the oven to 375°F (190°C).
+  
+2. **Cook Noodles:** Cook the gluten-free lasagna noodles according to the package instructions, then set them aside.
+
+3. **Cook Meat:** In a skillet, heat olive oil over medium heat and sauté the minced garlic until fragrant. Add the ground turkey and cook until browned. Stir in the marinara sauce, oregano, salt, and pepper; let it simmer for 10 minutes.
+
+4. **Prepare Tofu Mixture:** In a food processor or blender, blend the silken tofu until smooth. Mix in the nutritional yeast, egg (or flax egg substitute), and half of the dairy-free mozzarella-style cheese. If desired, chop and fold in fresh basil leaves for additional flavor.
+
+5. **Assemble Lasagna:**
+   - Spread a layer of the meat sauce on the bottom of a baking dish.
+   - Place a layer of gluten-free noodles over the sauce.
+   - Spread a layer of the tofu mixture over the noodles.
+   - Sprinkle some of the remaining dairy-free mozzarella.
+   - Repeat the layers, ending with a layer of noodles and topping with any remaining sauce and the remaining cheese.
+
+6. **Bake the Lasagna:** Cover the baking dish with foil and bake for 25 minutes. Remove the foil and bake for an additional 15 minutes or until the top is golden and bubbly.
+
+7. **Rest and Serve:** Allow the lasagna to cool for 5-10 minutes before slicing and serving.
+
+### Nutritional Considerations:
+- By using gluten-free noodles and dairy-free cheese, this dish accommodates gluten and dairy allergies or intolerances.
+- Silken tofu provides a creamy texture similar to ricotta and contributes plant-based protein.
+- Ground turkey offers a leaner protein option without sacrificing flavor.
+- Nutritional yeast provides a savory, cheesy flavor while being a great source of B-vitamins.
+- The overall changes maintain the lasagna's integrity, making it a well-balanced dish suitable for a variety of dietary needs.
+--------------------------------------------------
+Test Case 2:
+Dish Name: Chicken Alfredo
+Original Recipe Ingredients:
+1 lb fettuccine pasta, 2 chicken breasts, 2 tbsp butter, 1 cup heavy cream, 1/2 cup grated Parmesan cheese, 2 cloves garlic (minced), 1/4 tsp nutmeg, 1 tbsp olive oil, 1 tsp salt, 1 tsp pepper, parsley (for garnish)
+Original Recipe Instructions:
+1. Cook fettuccine according to package instructions. 2. Season chicken breasts with salt and pepper. Heat olive oil in a skillet and cook chicken until golden and cooked through, about 6-8 minutes per side. Remove and slice. 3. In the same skillet, melt butter and sauté garlic until fragrant. Add heavy cream and bring to a simmer. 4. Stir in Parmesan cheese and nutmeg, stirring until smooth. 5. Toss cooked pasta with Alfredo sauce and top with sliced chicken. Garnish with parsley.
+Allergic Ingredients: fettuccine pasta, Parmesan cheese, heavy cream
+
+Substituted Recipe:
+To create a Chicken Alfredo that avoids fettuccine pasta, Parmesan cheese, and heavy cream, I'll substitute these ingredients, focusing on maintaining the delicious flavors and creamy texture while ensuring it's nutritionally balanced.
+
+### Modified Chicken Alfredo Recipe
+
+**Ingredients**:
+- 1 lb gluten-free fettuccine pasta (made from rice or quinoa)
+- 2 chicken breasts
+- 2 tbsp dairy-free butter (e.g., Earth Balance or another margarine)
+- 1 cup coconut cream (use the thick part from a can of coconut milk)
+- 1/2 cup nutritional yeast (for a cheesy flavor)
+- 2 cloves garlic, minced
+- 1/4 tsp nutmeg
+- 1 tbsp olive oil
+- 1 tsp salt
+- 1 tsp pepper
+- Fresh parsley, for garnish
+
+**Instructions**:
+1. **Cook Pasta**: Prepare the gluten-free fettuccine according to the package instructions. Drain and set aside.
+
+2. **Cook Chicken**: Season the chicken breasts with salt and pepper. Heat olive oil in a skillet over medium heat. Cook the chicken until golden brown and cooked through, about 6-8 minutes per side, depending on thickness. Remove the chicken from the skillet and slice into strips.
+
+3. **Prepare Alfredo Sauce**: In the same skillet, melt the dairy-free butter over medium heat. Add minced garlic and sauté until fragrant, about 1 minute.
+
+4. **Make the Sauce Creamy**: Stir in the coconut cream, allowing it to combine well with the garlic. Bring to a gentle simmer, stirring constantly.
+
+5. **Add Cheesy Flavor**: Mix in the nutritional yeast and nutmeg, stirring until the sauce is smooth and well integrated. Adjust seasoning with additional salt and pepper to taste.
+
+6. **Combine**: Toss the cooked gluten-free pasta with the coconut cream Alfredo sauce until the pasta is well coated.
+
+7. **Serve**: Top the pasta with sliced chicken and garnish with fresh parsley.
+
+This version of Chicken Alfredo is free from gluten and dairy, yet it retains creamy and cheesy characteristics thanks to the coconut cream and nutritional yeast. This modification ensures the dish is safe, nutritionally inclusive, and flavorful. Enjoy!
+--------------------------------------------------
+Test Case 3:
+Dish Name: Vegetarian Pad Thai
+Original Recipe: None provided
+Allergic Ingredients: peanuts, soy sauce, eggs
+
+Substituted Recipe:
+Creating a Vegetarian Pad Thai that avoids peanuts, soy sauce, and eggs requires some thoughtful substitutions while ensuring the dish remains nutritious and delicious. Here's my take on a peanut-free, soy-free, and egg-free Vegetarian Pad Thai:
+
+### Vegetarian Pad Thai
+
+#### Ingredients
+
+- **8 oz rice noodles** (preferably flat, around 1/4 inch)
+- **2 tbsp sunflower seed butter** (or almond butter if not allergic to tree nuts)
+- **3 tbsp coconut aminos** (a soy sauce substitute)
+- **1 tbsp tamarind paste** (for authentic sourness)
+- **1 tbsp agave nectar** (or maple syrup, for sweetness)
+- **1 tbsp lime juice** (freshly squeezed)
+- **1 tsp chili garlic sauce** (adjust to taste for spice)
+- **3 tbsp vegetable oil** (such as canola or avocado)
+- **1 block (about 14 oz) firm tofu** (pressed to remove excess water)
+- **1 cup bean sprouts**
+- **1 red bell pepper** (thinly sliced)
+- **1 cup shredded carrot**
+- **3 green onions** (sliced, whites and greens separated)
+- **1 cup snow peas or sugar snap peas** (trimmed)
+- **1/4 cup fresh cilantro leaves** (optional, for garnish)
+- **1/4 cup chopped roasted sunflower seeds** (for added crunch)
+
+#### Instructions
+
+1. **Prepare the Noodles**:  
+   Cook the rice noodles according to the package instructions until just tender. Drain and rinse with cold water to stop the cooking process. Set aside.
+
+2. **Make the Sauce**:  
+   In a small bowl, whisk together the sunflower seed butter, coconut aminos, tamarind paste, agave nectar, lime juice, and chili garlic sauce until smooth. Adjust the seasoning to taste and set aside.
+
+3. **Prepare the Tofu**:  
+   Slice the pressed tofu into cubes. Heat 1 tablespoon of vegetable oil in a large non-stick skillet or wok over medium-high heat. Add the tofu cubes and cook until golden and crispy on all sides, about 6-8 minutes. Remove the tofu from the skillet and set aside.
+
+4. **Stir-Fry the Vegetables**:  
+   In the same skillet, add the remaining vegetable oil. Add the white parts of the green onions and stir-fry for about 1 minute. Then, add bell pepper slices, shredded carrots, and snow peas. Stir-fry the vegetables until they are just tender but still crisp, about 3-4 minutes.
+
+5. **Combine Everything**:  
+   Add the cooked noodles and tofu back into the skillet with the vegetables. Pour the prepared sauce over the top. Gently toss everything together over medium-high heat until well combined and heated through, about 2-3 minutes.
+
+6. **Finish with Fresh Ingredients**:  
+   Remove the skillet from heat and stir in the bean sprouts and the green parts of the green onions. Mix well to combine.
+
+7. **Serve**:  
+   Transfer the Pad Thai onto serving plates. Garnish with fresh cilantro and sprinkle with roasted sunflower seeds for added crunch. Serve with lime wedges on the side if desired.
+
+#### Nutritional Balance and Cultural Touch
+
+- **Proteins**: The tofu provides a rich source of plant-based protein.
+- **Healthy Fats**: Utilizing sunflower seed butter and a moderate amount of oil ensures heart-healthy fats.
+- **Complex Carbohydrates**: Rice noodles offer energy while keeping the dish gluten-free.
+- **Vitamins and Minerals**: An array of vegetables ensures plenty of vitamins, fibers, and antioxidants.
+- **Cultural Authenticity**: The use of tamarind, coconut aminos, and a touch of agave encapsulates the sweet, sour, and umami flavors characteristic of traditional Pad Thai.
+
+This adaptation preserves the essential qualities of the traditional dish while respecting dietary limitations and focusing on nutritious, balanced ingredients. Enjoy!
+--------------------------------------------------
+Test Case 4:
+Dish Name: Beef Stroganoff
+Original Recipe: None provided
+Allergic Ingredients: sour cream, butter, wheat flour
+
+Substituted Recipe:
+Creating a delicious and culturally authentic Beef Stroganoff without sour cream, butter, and wheat flour is indeed possible. We'll use alternative ingredients that maintain the creamy texture and rich flavor associated with this classic dish. Here's a recipe designed to be allergen-free while staying true to the roots of traditional Beef Stroganoff:
+
+### Allergen-Free Beef Stroganoff
+
+#### Ingredients:
+- 1 lb (450 g) beef sirloin, thinly sliced into strips
+- 2 tbsp olive oil, divided
+- 1 medium onion, finely chopped
+- 2 cloves garlic, minced
+- 8 oz (225 g) mushrooms, sliced
+- 1 cup beef broth (make sure it's gluten-free)
+- 1 tsp Dijon mustard
+- 1 tsp paprika
+- 1 cup coconut cream (chill a can of full-fat coconut milk and use the thick part)
+- 2 tbsp tapioca starch or cornstarch (as a thickener)
+- 1 cup unsweetened almond milk (or another non-dairy milk)
+- Salt and pepper, to taste
+- Fresh parsley, chopped for garnish
+
+#### Instructions:
+
+1. **Prepare the Beef:**
+   - Season the beef strips with salt and pepper. In a large skillet or pan, heat 1 tbsp of olive oil over medium-high heat. Add the beef strips in batches, searing them until browned on both sides. Remove the beef from the skillet and set aside.
+
+2. **Sauté the Vegetables:**
+   - In the same skillet, add the remaining 1 tbsp of olive oil. Sauté the onions until they are translucent, about 3 minutes. Add the garlic and sauté for another 30 seconds until fragrant. Add the mushrooms and cook until they are tender and browned, about 5 minutes.
+
+3. **Make the Sauce:**
+   - Return the beef strips to the skillet with the onions and mushrooms. Stir in the Dijon mustard and paprika. Pour in the beef broth and bring the mixture to a simmer. Let it cook for about 5 minutes to let the flavors meld.
+
+4. **Thicken the Sauce:**
+   - In a small bowl, mix the coconut cream with the tapioca starch or cornstarch until smooth. Gradually stir this mixture into the skillet. Add the almond milk and continue to cook, stirring frequently, until the sauce thickens, about 3-5 minutes.
+
+5. **Adjust Seasoning:**
+   - Taste the sauce and adjust the seasoning with salt and pepper as needed.
+
+6. **Serve:**
+   - Once the sauce has thickened and the beef is tender, serve the stroganoff hot. Garnish with fresh parsley and serve over gluten-free pasta, rice, or quinoa.
+
+### Nutritional Notes:
+- **Coconut Cream:** Provides a good source of healthy fats while keeping the dish creamy without dairy.
+- **Almond Milk:** Adds smoothness to the sauce, complementing the coconut without overwhelming its flavor.
+- **Tapioca Starch:** Helps thicken the sauce, maintaining the desired consistency usually achieved with flour.
+- **Beef Broth and Mushrooms:** Contribute umami depth and nutritional benefits to the dish, including vitamins and antioxidants.
+
+This version of Beef Stroganoff maintains the comforting and savory notes of the traditional dish while adhering to dietary restrictions. Enjoy your allergen-free cooking adventure!
+--------------------------------------------------
