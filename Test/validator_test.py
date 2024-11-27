@@ -15,7 +15,7 @@ if __name__ == "__main__":
             original_recipe = data['original_recipe']
             modified_recipe = data['new_recipe']
             
-            result = evaluator(dish_name, original_recipe, modified_recipe, restriction)
+            result = evaluator(dish_name, original_recipe, modified_recipe, restriction, testing=True)
             
             print(f"Result #{count}: {result}")
             
@@ -24,17 +24,17 @@ if __name__ == "__main__":
                 
             else:
                 if categories == "Safe":
-                    if categories.lower() in result.lower() and "no" not in result.lower():
+                    if "yes" in result.lower():
                         correct += 1
                     #TODO do we need to consider something else?
                         
                 if categories == "Not Safe":
-                    if categories.lower() in result.lower():
+                    if "no" in result.lower():
                         correct += 1
                     #TODO do we need to consider something else?
                 
                 if categories == "Caution":
-                    if categories.lower() in result.lower():
+                    if "caution" in result.lower():
                         correct += 1
                     #TODO do we need to consider something else?
                         
