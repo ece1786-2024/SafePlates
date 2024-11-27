@@ -1111,7 +1111,6 @@ caution = [
             ""
         ]
     },
-    "safe" : "Non safe",
     "Explanation": "NOT NEEDED"
     },
     # 4
@@ -1134,7 +1133,6 @@ caution = [
             ""
         ]
     },
-    "safe" : "Non safe",
     "Explanation": "NOT NEEDED"
     },
     # 5
@@ -1157,7 +1155,6 @@ caution = [
             ""
         ]
     },
-    "safe" : "Non safe",
     "Explanation": "NOT NEEDED"
     },
     # 6
@@ -1180,7 +1177,6 @@ caution = [
             ""
         ]
     },
-    "safe" : "Non safe",
     "Explanation": "NOT NEEDED"
     },
     # 7
@@ -1203,7 +1199,6 @@ caution = [
             ""
         ]
     },
-    "safe" : "Non safe",
     "Explanation": "NOT NEEDED"
     },
     # 8
@@ -1226,7 +1221,6 @@ caution = [
             ""
         ]
     },
-    "safe" : "Non safe",
     "Explanation": "NOT NEEDED"
     },
     # 9
@@ -1249,7 +1243,6 @@ caution = [
             ""
         ]
     },
-    "safe" : "Non safe",
     "Explanation": "NOT NEEDED"
     },
     # 10
@@ -1272,7 +1265,6 @@ caution = [
             ""
         ]
     },
-    "safe" : "Non safe",
     "Explanation": "NOT NEEDED"
     }
 ]
