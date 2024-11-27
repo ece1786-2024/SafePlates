@@ -2,7 +2,7 @@ safe = [
     # 1
     {
     "dish_name": "Tom Yum Soup",
-    "requirement": "Seafood",
+    "restriction": "Seafood-free",
     "original_recipe": {
         "ingredients": [
             "4 cups (1 liter) chicken or vegetable stock",
@@ -32,7 +32,7 @@ safe = [
             "Serve hot as an appetizer or main course."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "4 cups (1 liter) chicken or vegetable stock",
             "3 stalks lemongrass, trimmed and smashed",
@@ -65,7 +65,7 @@ safe = [
     # 2
     { 
     "dish_name": "Crepes",
-    "requirement": "Nut-free",
+    "restriction": "Nut-free",
     "original_recipe": {
         "ingredients": [
             "1 cup (125g) all-purpose flour",
@@ -87,7 +87,7 @@ safe = [
             "Fillings with peaut butter."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "1 cup (125g) all-purpose flour",
             "2 large eggs",
@@ -112,7 +112,7 @@ safe = [
     # 3
     { 
     "dish_name": "Spaghetti Carbonara",
-    "requirement": "Dairy-free",
+    "restriction": "Dairy-free",
     "original_recipe": {
         "ingredients": [
             "400g spaghetti",
@@ -133,7 +133,7 @@ safe = [
             "Season with salt and black pepper to taste. Serve immediately."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "400g spaghetti",
             "150g pancetta, diced",
@@ -157,7 +157,7 @@ safe = [
     # 4
     { 
     "dish_name": "Pasta Alfredo",
-    "requirement": "Nut-free",
+    "restriction": "Nut-free",
     "original_recipe": {
         "ingredients": [
             "200g (7 oz) fettuccine pasta",
@@ -180,7 +180,7 @@ safe = [
             "Serve warm, garnished with chopped walnuts if desired."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "200g (7 oz) fettuccine pasta",
             "2 tablespoons unsalted butter",
@@ -206,7 +206,7 @@ safe = [
     # 5
     {
     "dish_name": "Chocolate Chip Cookies",
-    "requirement": "Low-sugar",
+    "restriction": "Low-sugar",
     "original_recipe": {
         "ingredients": [
             "1 1/2 cups (190g) all-purpose flour",
@@ -230,7 +230,7 @@ safe = [
             "Bake for 10-12 minutes, or until the edges are golden. Let cool before serving."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "1 1/2 cups (190g) all-purpose flour",
             "1/2 teaspoon baking soda",
@@ -257,7 +257,7 @@ safe = [
     # 6
     {
     "dish_name": "Herb-Roasted Chicken Legs",
-    "requirement": "Low-calorie",
+    "restriction": "Low-calorie",
     "original_recipe": {
         "ingredients": [
             "4 chicken legs (drumstick and thigh attached, skin on)",
@@ -279,7 +279,7 @@ safe = [
             "Serve with steamed vegetables for a balanced, low-calorie meal."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "4 chicken breasts (boneless, skinless)",
             "1 tablespoon olive oil",
@@ -304,7 +304,7 @@ safe = [
     # 7
     {
     "dish_name": "Creamy Mashed Potatoes",
-    "requirement": "Dairy-free",
+    "restriction": "Dairy-free",
     "original_recipe": {
         "ingredients": [
             "4 large potatoes, peeled and chopped",
@@ -323,7 +323,7 @@ safe = [
             "Serve warm, garnished with chopped parsley if desired."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "4 large potatoes, peeled and chopped",
             "1/4 cup (60ml) unsweetened soy milk",
@@ -345,7 +345,7 @@ safe = [
     # 8
     {
     "dish_name": "Grilled Salmon with Lemon Herb Sauce",
-    "requirement": "Fish-free",
+    "restriction": "Fish-free",
     "original_recipe": {
         "ingredients": [
             "4 salmon fillets",
@@ -365,7 +365,7 @@ safe = [
             "Serve the grilled salmon with the lemon herb sauce and garnish with lemon slices."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "4 chicken breasts (boneless, skinless)",
             "2 tablespoons olive oil",
@@ -388,7 +388,7 @@ safe = [
     # 9
     {
     "dish_name": "Pancakes",
-    "requirement": "Egg-free",
+    "restriction": "Egg-free",
     "original_recipe": {
         "ingredients": [
             "1 cup (125g) all-purpose flour",
@@ -412,7 +412,7 @@ safe = [
             "Serve warm with butter and syrup if desired."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "1 cup (125g) all-purpose flour",
             "2 tablespoons sugar",
@@ -439,7 +439,7 @@ safe = [
     # 10
     {
     "dish_name": "Spaghetti with Marinara Sauce",
-    "requirement": "Wheat-free",
+    "restriction": "Wheat-free",
     "original_recipe": {
         "ingredients": [
             "1 pound (450g) spaghetti (made from wheat)",
@@ -463,7 +463,7 @@ safe = [
             "Serve warm, optionally topped with grated Parmesan cheese."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "1 pound (450g) gluten-free spaghetti (made from rice, corn, or quinoa)",
             "2 tablespoons olive oil",
@@ -493,7 +493,7 @@ non_safe = [
     # 1
     {
     "dish_name": "Creamy Chicken Alfredo",
-    "requirement": "Diary-free",
+    "restriction": "Diary-free",
     "original_recipe": {
         "ingredients": [
             "8 ounces (225g) fettuccine pasta",
@@ -516,7 +516,7 @@ non_safe = [
             "Serve hot, garnished with chopped parsley."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "8 ounces (225g) fettuccine pasta",
             "2 tablespoons olive oil",
@@ -544,7 +544,7 @@ non_safe = [
     # 2
     {
     "dish_name": "Seared Scallops with Garlic Butter",
-    "requirement": "Mollusks-free",
+    "restriction": "Mollusks-free",
     "original_recipe": {
         "ingredients": [
             "1 pound (450g) fresh scallops",
@@ -568,7 +568,7 @@ non_safe = [
             "Serve hot, garnished with chopped parsley."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "1 pound (450g) fresh clams (cleaned and shelled, if desired)",
             "2 tablespoons unsalted butter",
@@ -595,7 +595,7 @@ non_safe = [
     # 3
     {
     "dish_name": "Seared Scallops with Garlic Butter",
-    "requirement": "Shellfish substitution",
+    "restriction": "Shellfish-free",
     "original_recipe": {
         "ingredients": [
             "1 pound (450g) fresh scallops",
@@ -619,7 +619,7 @@ non_safe = [
             "Serve hot, garnished with chopped parsley."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "1 pound (450g) fresh scallops",
             "2 tablespoons unsalted butter",
@@ -646,7 +646,7 @@ non_safe = [
     # 4
     {
     "dish_name": "Pancakes",
-    "requirement": "Egg-free",
+    "restriction": "Egg-free",
     "original_recipe": {
         "ingredients": [
             "1 cup (125g) all-purpose flour",
@@ -670,7 +670,7 @@ non_safe = [
             "Serve warm with butter and syrup if desired."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "1 cup (125g) all-purpose flour",
             "2 tablespoons sugar",
@@ -697,7 +697,7 @@ non_safe = [
     # 5
     {
     "dish_name": "Creamy Mashed Potatoes",
-    "requirement": "Dairy-free",
+    "restriction": "Dairy-free",
     "original_recipe": {
         "ingredients": [
             "4 large potatoes, peeled and chopped",
@@ -716,7 +716,7 @@ non_safe = [
             "Serve warm, garnished with chopped parsley if desired."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "4 large potatoes, peeled and chopped",
             "1/4 cup (60ml) 4% milk",
@@ -738,7 +738,7 @@ non_safe = [
     # 6
     {
     "dish_name": "Pad Thai",
-    "requirement": "Nut-free",
+    "restriction": "Nut-free",
     "original_recipe": {
         "ingredients": [
             "8 ounces (225g) rice noodles",
@@ -766,7 +766,7 @@ non_safe = [
             "Serve garnished with chopped cilantro."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "8 ounces (225g) rice noodles",
             "2 tablespoons vegetable oil",
@@ -798,7 +798,7 @@ non_safe = [
     # 7
     {
     "dish_name": "Creamy Mushroom Soup",
-    "requirement": "Dairy-free",
+    "restriction": "Dairy-free",
     "original_recipe": {
         "ingredients": [
             "2 tablespoons olive oil",
@@ -822,7 +822,7 @@ non_safe = [
             "Season with salt and pepper to taste, and garnish with chopped parsley before serving."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "2 tablespoons olive oil",
             "1 medium onion, diced",
@@ -849,7 +849,7 @@ non_safe = [
     # 8
     {
     "dish_name": "Satay Sauce",
-    "requirement": "Peanut-free",
+    "restriction": "Peanut-free",
     "original_recipe": {
         "ingredients": [
             "1/2 cup peanut butter",
@@ -869,7 +869,7 @@ non_safe = [
             "Serve as a dipping sauce for grilled meats, vegetables, or noodles."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "1/2 cup hazelnut butter",
             "1/4 cup coconut milk",
@@ -892,7 +892,7 @@ non_safe = [
     # 9
     {
     "dish_name": "Tom Yum Soup",
-    "requirement": "Seafood",
+    "restriction": "Seafood-free",
     "original_recipe": {
         "ingredients": [
             "4 cups (1 liter) chicken or vegetable stock",
@@ -922,7 +922,7 @@ non_safe = [
             "Serve hot as an appetizer or main course."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "4 cups (1 liter) chicken or vegetable stock",
             "3 stalks lemongrass, trimmed and smashed",
@@ -957,7 +957,7 @@ non_safe = [
     # 10
     {
     "dish_name": "Classic Mashed Potatoes",
-    "requirement": "Dairy-free",
+    "restriction": "Dairy-free",
     "original_recipe": {
         "ingredients": [
             "4 large potatoes, peeled and chopped",
@@ -976,7 +976,7 @@ non_safe = [
             "Serve warm, garnished with chopped parsley."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "4 large potatoes, peeled and chopped",
             "1/2 cup shredded cheddar cheese (or any cheese of choice)",
@@ -1001,7 +1001,7 @@ caution = [
     # 1
     {
     "dish_name": "Seafood Stir-Fry",
-    "requirement": "Shrip-free",
+    "restriction": "Shrip-free",
     "original_recipe": {
         "ingredients": [
             "1 pound (450g) shrimp, peeled and deveined",
@@ -1027,7 +1027,7 @@ caution = [
             "Serve hot over cooked rice."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "1 pound (450g) mollusks (scallops, oysters, clams and mussels)",
             "2 tablespoons vegetable oil",
@@ -1057,7 +1057,7 @@ caution = [
     # 2
     {
     "dish_name": "Banana Bread",
-    "requirement": "Nut-free",
+    "restriction": "Nut-free",
     "original_recipe": {
         "ingredients": [
             "3 pipe bananas (mashed)",
@@ -1074,7 +1074,7 @@ caution = [
             "Bake at 350°F for 50-60 minutes."
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             "3 ripe bananas (mashed)",
             "1/2 cup sugar",
@@ -1094,7 +1094,7 @@ caution = [
     # 3
     { 
     "dish_name": " ",
-    "requirement": "",
+    "restriction": "",
     "original_recipe": {
         "ingredients": [
             ""
@@ -1103,7 +1103,7 @@ caution = [
             ""
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             ""
         ],
@@ -1116,7 +1116,7 @@ caution = [
     # 4
     { 
     "dish_name": " ",
-    "requirement": "",
+    "restriction": "",
     "original_recipe": {
         "ingredients": [
             ""
@@ -1125,7 +1125,7 @@ caution = [
             ""
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             ""
         ],
@@ -1138,7 +1138,7 @@ caution = [
     # 5
     { 
     "dish_name": " ",
-    "requirement": "",
+    "restriction": "",
     "original_recipe": {
         "ingredients": [
             ""
@@ -1147,7 +1147,7 @@ caution = [
             ""
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             ""
         ],
@@ -1160,7 +1160,7 @@ caution = [
     # 6
     { 
     "dish_name": " ",
-    "requirement": "",
+    "restriction": "",
     "original_recipe": {
         "ingredients": [
             ""
@@ -1169,7 +1169,7 @@ caution = [
             ""
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             ""
         ],
@@ -1182,7 +1182,7 @@ caution = [
     # 7
     { 
     "dish_name": " ",
-    "requirement": "",
+    "restriction": "",
     "original_recipe": {
         "ingredients": [
             ""
@@ -1191,7 +1191,7 @@ caution = [
             ""
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             ""
         ],
@@ -1204,7 +1204,7 @@ caution = [
     # 8
     { 
     "dish_name": " ",
-    "requirement": "",
+    "restriction": "",
     "original_recipe": {
         "ingredients": [
             ""
@@ -1213,7 +1213,7 @@ caution = [
             ""
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             ""
         ],
@@ -1226,7 +1226,7 @@ caution = [
     # 9
     { 
     "dish_name": " ",
-    "requirement": "",
+    "restriction": "",
     "original_recipe": {
         "ingredients": [
             ""
@@ -1235,7 +1235,7 @@ caution = [
             ""
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             ""
         ],
@@ -1248,7 +1248,7 @@ caution = [
     # 10
     { 
     "dish_name": " ",
-    "requirement": "",
+    "restriction": "",
     "original_recipe": {
         "ingredients": [
             ""
@@ -1257,7 +1257,7 @@ caution = [
             ""
         ]
     },
-    "new_recipe": {
+    "modified_recipe": {
         "ingredients": [
             ""
         ],
