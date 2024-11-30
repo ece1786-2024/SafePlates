@@ -29,7 +29,7 @@ def command_line_UI():
     dish_name, original_recipe, allergic_ingredients = get_user_input()
 
     # Generate substituted recipe
-    substituted_recipe = generator(dish_name, original_recipe, allergic_ingredients)
+    substituted_recipe = agent_flow(dish_name, original_recipe, allergic_ingredients)
 
     # Display the result
     print("\n### Substituted Recipe:\n")
@@ -75,7 +75,7 @@ def web_UI():
     }
 
     .gr-textbox {
-        border: 2px solid #007bff; /* Blue border */
+        border: 5px solid #007bff; /* Blue border */
         border-radius: 5px;
     }
 
@@ -87,9 +87,17 @@ def web_UI():
         border-color: #0056b3; /* Darker blue on focus */
         box-shadow: 0 0 5px #0056b3; /* Glow effect on focus */
     }
-
-    .gr-markdown {
-        font-size: 20px; /* Increased font size for Markdown */
+    
+    .gr-textbox label {
+        font-size: 24px !important; /* Larger font size for Textbox labels */
+        font-weight: bold; /* Optional: Make Textbox labels bold */
+        color: #333; /* Label color */
+    }
+    
+    .gr-checkbox label {
+        font-size: 20px; /* Normal font size for Checkbox labels */
+        font-weight: normal; /* Default weight for Checkbox labels */
+        color: #333; /* Label color for Checkbox */
     }
     """
 
