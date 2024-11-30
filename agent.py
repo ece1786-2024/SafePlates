@@ -105,7 +105,7 @@ def evaluator(dish_name, original_recipe, modified_recipe, restrictions, testing
         •	For allergies, not only ingredient safety needs to be assert, but also cross-reactivity risk and cross-contamination risk needs to be checked.
         •	For dietary restrictions, ensure all ingredients comply with the stated guidelines.
         •  Cooking Steps: Evaluate whether the steps are logical and feasible with the modified ingredients.
-        If the modified recipe passes all checks, the answer is simply “Yes” (valid modification). Avoid any additional evaluation or commentary. If any check fails, depending on the reason it fails, if it violates the hard rule such as including forbidden ingredients, the answer should be “No” and follow with an explanation in separate paragraphs. If the check fails because of potential risk or ambiguity, the answer should be “Caution” and follow the points need to be watch out.
+        If the modified recipe passes all checks, the answer is simply “Yes” (valid modification). Avoid any additional evaluation or commentary. If any check fails, depending on the reason it fails, if it violates the hard rule such as including forbidden ingredients, the answer should be “No” and follow with an explanation in separate paragraphs. If the check fails because of potential risk or ambiguity, the answer should be “Caution”.
         
         Note: Only responsed "Yes" or "No" or "Caution"
         ### Response: {"Yes" or "No" or "Caution"}
@@ -146,9 +146,10 @@ def agent_flow(dish_name, original_recipe, restrictions):
     new_recipe = generator(dish_name, original_recipe, restrictions)
     evaluation = evaluator(dish_name, original_recipe, new_recipe, restrictions)
 
-    # if evaluation.lower().startswith("yes"):
-    #     return new_recipe
-    # else:
-    #     return "No valid substitution available"
+    if 'no' in evaluation.lower() and len(evaluation) < 5:
+        evaluation = evaluator(dish_name, original_recipe, new_recipe, restrictions)
+        if 'no' in evaluation.lower() and len(evaluation) < 5:
+            return f"It is not possible to generate a new recipe that satisfy your restrictions!"
+            
     return f"The newly generated recipe based on your restrictions is:\n\n{new_recipe}\n\nEvaluation of the recipe:\n{evaluation}"
 
