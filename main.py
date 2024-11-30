@@ -134,8 +134,8 @@ def web_UI():
                 )
 
                 allergic_ingredients = gr.Textbox(
-                    label="Allergic Ingredients",
-                    placeholder="Enter ingredients to substitute (comma-separated)",
+                    label="Special Requirements",
+                    placeholder="Enter special requirements (e.g., seafood-free, gluten-free, vegetarian)",
                     lines=2
                 )
 
