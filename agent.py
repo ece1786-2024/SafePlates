@@ -55,7 +55,7 @@ def generator(dish_name, original_recipe, allergic_ingredients):
     except Exception as e:
         return f"An error occurred during recipe generation: {str(e)}"
 
-def evaluator(dish_name, original_recipe, modified_recipe, restrictions):
+def evaluator(dish_name, original_recipe, modified_recipe, restrictions, testing=False):
     system_prompt = f"""
     I will provide you with:
     1.	A dish name.
@@ -86,8 +86,32 @@ def evaluator(dish_name, original_recipe, modified_recipe, restrictions):
 
     ### User Restrictions:
     {restrictions}
-
     """
+    
+    if testing:
+        #TODO Do we need to return something different if testing?
+        system_prompt = """
+        I will provide you with:
+        1.	A dish name.
+        2.	A specific requirement (e.g., dietary restriction or allergy).
+        3.	An original recipe corresponding to the dish name (including ingredients and cooking steps).
+        4.	A modified recipe that attempts to adjust the original recipe based on the requirement.
+        Your task is to determine if the modified recipe is valid. Follow these steps to evaluate the validity:
+        •  Edibility and Nutritional Sense: Ensure the modified recipe produces a dish that is edible and nutritionally coherent. For example, replacing "butter chicken" with "butter cheese" is invalid if it results in a dish that is unbalanced or nonsensical.
+        •  Ingredient Safety: Ensure that the substituted ingredients:
+        •	Are safe to consume individually and in combination.
+        •	Do not pose cross-contamination risks, especially in recipes tailored for allergies. For example, in a nut-free recipe, substitutions must explicitly be certified nut-free. If no explicit certification is provided, assume the ingredient is potentially contaminated.
+        •  Requirement Fulfillment: Confirm that the specific requirement is fully satisfied. Examples include:
+        •	For allergies, not only ingredient safety needs to be assert, but also cross-reactivity risk and cross-contamination risk needs to be checked.
+        •	For dietary restrictions, ensure all ingredients comply with the stated guidelines.
+        •  Cooking Steps: Evaluate whether the steps are logical and feasible with the modified ingredients.
+        If the modified recipe passes all checks, the answer is simply “Yes” (valid modification). Avoid any additional evaluation or commentary. If any check fails, depending on the reason it fails, if it violates the hard rule such as including forbidden ingredients, the answer should be “No” and follow with an explanation in separate paragraphs. If the check fails because of potential risk or ambiguity, the answer should be “Caution” and follow the points need to be watch out.
+        
+        Note: Only responsed "Yes" or "No" or "Caution"
+        ### Response: {"Yes" or "No" or "Caution"}
+        
+        """
+    
     try:
         completion = client.chat.completions.create(
             model="gpt-4o",
