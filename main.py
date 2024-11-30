@@ -6,7 +6,50 @@ import gradio as gr
 from agent import generator, evaluator, agent_flow
 from test_cases import test_cases
 
-css = """
+
+def get_user_input():
+    # Gather the necessary information from the user
+    dish_name = input("Enter the dish name (required): ").strip()
+    while not dish_name:
+        print("Dish name is required. Please enter a valid dish name.")
+        dish_name = input("Enter the dish name (required): ").strip()
+
+    original_recipe = input("Enter the original recipe (optional, leave blank if none): ").strip()
+
+    allergic_ingredients = input("Enter the ingredients to substitute (required, separate by commas): ").strip()
+    while not allergic_ingredients:
+        print("Allergic ingredients are required. Please enter at least one ingredient to avoid.")
+        allergic_ingredients = input("Enter the ingredients to substitute (required, separate by commas): ").strip()
+
+    return dish_name, original_recipe, allergic_ingredients
+
+
+def command_line_UI():
+    # Get user inputs
+    dish_name, original_recipe, allergic_ingredients = get_user_input()
+
+    # Generate substituted recipe
+    substituted_recipe = generator(dish_name, original_recipe, allergic_ingredients)
+
+    # Display the result
+    print("\n### Substituted Recipe:\n")
+    print(f"{substituted_recipe}\n")
+
+
+
+# Gradio interface
+def generate_in_gradio(dish_name, original_recipe, allergic_ingredients):
+    substituted_recipe = agent_flow(dish_name, original_recipe, allergic_ingredients)
+    # Returning Markdown-compatible result
+    return f"### Substituted Recipe:\n{substituted_recipe}"
+
+
+def web_UI():
+    # Path to your logo image file
+    logo_path = "image/logo-removebg-preview.png"  # Replace with the actual path to your logo file
+
+    # Custom CSS for styling buttons and textboxes
+    css = """
     .gradio-container {background-color: #DBE8B4}
 
     #logo {
@@ -50,46 +93,6 @@ css = """
     }
     """
 
-def get_user_input():
-    # Gather the necessary information from the user
-    dish_name = input("Enter the dish name (required): ").strip()
-    while not dish_name:
-        print("Dish name is required. Please enter a valid dish name.")
-        dish_name = input("Enter the dish name (required): ").strip()
-
-    original_recipe = input("Enter the original recipe (optional, leave blank if none): ").strip()
-
-    allergic_ingredients = input("Enter the ingredients to substitute (required, separate by commas): ").strip()
-    while not allergic_ingredients:
-        print("Allergic ingredients are required. Please enter at least one ingredient to avoid.")
-        allergic_ingredients = input("Enter the ingredients to substitute (required, separate by commas): ").strip()
-
-    return dish_name, original_recipe, allergic_ingredients
-
-
-def command_line_UI():
-    # Get user inputs
-    dish_name, original_recipe, allergic_ingredients = get_user_input()
-
-    # Generate substituted recipe
-    substituted_recipe = generator(dish_name, original_recipe, allergic_ingredients)
-
-    # Display the result
-    print("\n### Substituted Recipe:\n")
-    print(f"{substituted_recipe}\n")
-
-
-
-# Gradio interface
-def generate_in_gradio(dish_name, original_recipe, allergic_ingredients):
-    substituted_recipe = agent_flow(dish_name, original_recipe, allergic_ingredients)
-    # Returning Markdown-compatible result
-    return f"### Substituted Recipe:\n{substituted_recipe}"
-
-
-def web_UI():
-    # Path to your logo image file
-    logo_path = "image/logo-removebg-preview.png"  # Replace with the actual path to your logo file
 
     # Create the Gradio app
     with gr.Blocks(css=css) as app:
@@ -126,8 +129,8 @@ def web_UI():
                 )
 
                 allergic_ingredients = gr.Textbox(
-                    label="Allergic Ingredients",
-                    placeholder="Enter ingredients to substitute (comma-separated)",
+                    label="Special Requirements",
+                    placeholder="Enter special requirements (e.g., seafood-free, gluten-free, vegetarian)",
                     lines=2
                 )
 
@@ -140,7 +143,7 @@ def web_UI():
             gr.Markdown(
                 "<h3 style='text-align: center; font-size: 24px;'>Substituted Recipe</h3>"
             )
-            output = gr.Markdown(elem_id="recipe_output")  # Adjusted to larger font size
+            output = gr.Markdown()
 
         # Define button click action
         submit_button.click(fn=generate_in_gradio, inputs=[dish_name, original_recipe, allergic_ingredients],
@@ -148,7 +151,6 @@ def web_UI():
 
     # Launch the app
     app.launch()
-
 
 
 def run_test_case(output_file="validated_test_case_results.txt"):
@@ -204,27 +206,3 @@ if __name__ == "__main__":
 
     # uncomment this to run the provided test cases
     # run_test_case()
-# Adding CSS for larger font size for the generated recipe
-css = """
-#generated_recipe_display {
-    font-size: 20px; /* Adjust the font size as needed */
-    color: #333; /* Optional: Customize text color */
-    line-height: 1.5; /* Optional: Adjust line spacing */
-}
-"""
-
-# Assuming the "generated recipe" is shown in a Gradio component, adding the `elem_id` to it
-# Locate the component that displays the generated recipe and update it.
-with gr.Blocks(css=css) as demo:
-    gr.Markdown("# Recipe Generator")
-    ingredients_input = gr.Textbox(label="Enter Ingredients", placeholder="List your ingredients here")
-    recipe_output = gr.Textbox(label="Generated Recipe", elem_id="generated_recipe_display")
-    generate_button = gr.Button("Generate Recipe")
-
-    generate_button.click(
-        fn=generate_recipe,  # This function should be defined in your original file
-        inputs=ingredients_input,
-        outputs=recipe_output
-    )
-
-# Replace the interface creation in the file with this updated interface.
