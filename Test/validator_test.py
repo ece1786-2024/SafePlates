@@ -26,17 +26,14 @@ if __name__ == "__main__":
                 if categories == "Safe":
                     if "yes" in result.lower():
                         correct += 1
-                    #TODO do we need to consider something else?
                         
                 if categories == "Not Safe":
                     if "no" in result.lower():
                         correct += 1
-                    #TODO do we need to consider something else?
                 
                 if categories == "Caution":
                     if "caution" in result.lower():
                         correct += 1
-                    #TODO do we need to consider something else?
                         
                 count += 1
                     

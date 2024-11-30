@@ -1092,70 +1092,144 @@ caution = [
     "Explanation":"While sunflower butter is not derived from nuts, it may trigger cross-reactivity in individuals with severe nut allergies due to its similarity in processing or protein structure."
     },
     # 3
-    { 
-    "dish_name": " ",
-    "restriction": "",
+    {
+    "dish_name": "Miso Soup",
+    "restriction": "Seafood-free",
     "original_recipe": {
         "ingredients": [
-            ""
+            "4 cups dashi broth",
+            "2 tablespoons miso paste",
+            "1/2 cup tofu, cubed",
+            "1/2 cup shrimp, peeled and deveined",
+            "2 green onions, chopped",
+            "1 sheet nori (seaweed), sliced into strips"
         ],
-        "steps":[
-            ""
+        "steps": [
+            "Heat the dashi broth in a pot over medium heat until hot but not boiling.",
+            "In a small bowl, dissolve the miso paste in a bit of hot broth, then add it back to the pot.",
+            "Add tofu cubes and shrimp to the soup and cook until the shrimp are pink and cooked through, about 2-3 minutes.",
+            "Add green onions and nori strips before serving."
         ]
     },
     "modified_recipe": {
         "ingredients": [
-            ""
+            "4 cups dashi broth",
+            "2 tablespoons miso paste",
+            "1/2 cup tofu, cubed",
+            "1/2 cup seaweed (such as wakame), soaked if needed",
+            "2 green onions, chopped",
+            "1 sheet nori (seaweed), sliced into strips"
         ],
-        "steps":[
-            ""
+        "steps": [
+            "Heat the dashi broth in a pot over medium heat until hot but not boiling.",
+            "In a small bowl, dissolve the miso paste in a bit of hot broth, then add it back to the pot.",
+            "Add tofu cubes and the soaked seaweed to the soup and cook for about 2-3 minutes.",
+            "Add green onions and nori strips before serving."
         ]
     },
-    "Explanation": "NOT NEEDED"
+    "Explanation": "Seaweed, such as nori or other algae-based products, can cause reactions in people with seafood allergies due to potential cross-reactivity or contamination. While seaweed itself is not a seafood, it grows in marine environments where it may come into contact with fish, shellfish, or their proteins. "
     },
     # 4
-    { 
-    "dish_name": " ",
-    "restriction": "",
+    {
+    "dish_name": "Muffins with Almond Slice Topping",
+    "restriction": "Nut-free",
     "original_recipe": {
         "ingredients": [
-            ""
+            "2 cups all-purpose flour",
+            "1/2 cup sugar",
+            "2 tsp baking powder",
+            "1/4 tsp salt",
+            "1/2 cup unsalted butter, melted",
+            "1 cup milk",
+            "2 large eggs",
+            "1 tsp vanilla extract",
+            "1/4 cup almond slices (for topping)"
         ],
-        "steps":[
-            ""
+        "steps": [
+            "Preheat the oven to 375°F (190°C). Line a muffin tin with paper liners.",
+            "In a large bowl, whisk together the flour, sugar, baking powder, and salt.",
+            "In another bowl, mix the melted butter, milk, eggs, and vanilla extract until well combined.",
+            "Pour the wet ingredients into the dry ingredients and mix until just combined.",
+            "Spoon the batter into the prepared muffin tin, filling each cup about 3/4 full.",
+            "Sprinkle almond slices on top of each muffin.",
+            "Bake for 18–20 minutes or until a toothpick inserted into the center comes out clean.",
+            "Allow the muffins to cool for 5 minutes in the tin, then transfer them to a wire rack to cool completely."
         ]
     },
     "modified_recipe": {
         "ingredients": [
-            ""
+            "2 cups all-purpose flour",
+            "1/2 cup sugar",
+            "2 tsp baking powder",
+            "1/4 tsp salt",
+            "1/2 cup unsalted butter, melted",
+            "1 cup milk",
+            "2 large eggs",
+            "1 tsp vanilla extract",
+            "1/4 cup sunflower seeds (for topping)"
         ],
-        "steps":[
-            ""
+        "steps": [
+            "Preheat the oven to 375°F (190°C). Line a muffin tin with paper liners.",
+            "In a large bowl, whisk together the flour, sugar, baking powder, and salt.",
+            "In another bowl, mix the melted butter, milk, eggs, and vanilla extract until well combined.",
+            "Pour the wet ingredients into the dry ingredients and mix until just combined.",
+            "Spoon the batter into the prepared muffin tin, filling each cup about 3/4 full.",
+            "Sprinkle sunflower seeds on top of each muffin.",
+            "Bake for 18–20 minutes or until a toothpick inserted into the center comes out clean.",
+            "Allow the muffins to cool for 5 minutes in the tin, then transfer them to a wire rack to cool completely."
         ]
     },
-    "Explanation": "NOT NEEDED"
+    "Explanation": "Sunflower seeds, while not nuts, can cause allergic reactions in people with nut allergies due to cross-reactivity or contamination. Cross-reactivity occurs because some individuals with nut allergies react to similar proteins found in seeds like sunflower seeds. Additionally, sunflower seeds are often processed in facilities that also handle nuts, leading to cross-contamination."
     },
     # 5
-    { 
-    "dish_name": " ",
-    "restriction": "",
+    {
+    "dish_name": "Classic Sugar Cookies",
+    "restriction": "Egg",
     "original_recipe": {
         "ingredients": [
-            ""
+            "2 1/4 cups all-purpose flour",
+            "1/2 tsp baking powder",
+            "1/4 tsp salt",
+            "3/4 cup unsalted butter, softened",
+            "1 cup granulated sugar",
+            "1 large egg",
+            "1 tsp vanilla extract"
         ],
-        "steps":[
-            ""
+        "steps": [
+            "Preheat the oven to 350°F (175°C). Line a baking sheet with parchment paper.",
+            "In a medium bowl, whisk together the flour, baking powder, and salt.",
+            "In a large bowl, beat the butter and sugar until light and fluffy.",
+            "Add the egg and vanilla extract to the butter mixture, and beat until combined.",
+            "Gradually mix in the dry ingredients until a dough forms.",
+            "Roll the dough into 1-inch balls and place them on the prepared baking sheet.",
+            "Flatten each ball slightly with the back of a spoon.",
+            "Bake for 10–12 minutes or until the edges are golden.",
+            "Let the cookies cool on the baking sheet for 5 minutes before transferring them to a wire rack."
         ]
     },
     "modified_recipe": {
         "ingredients": [
-            ""
+            "2 1/4 cups all-purpose flour",
+            "1/2 tsp baking powder",
+            "1/4 tsp salt",
+            "3/4 cup unsalted butter, softened",
+            "1 cup sugar substitute (like erythritol or stevia blend)",
+            "1/4 cup unsweetened applesauce (as an egg replacement)",
+            "1 tsp vanilla extract"
         ],
-        "steps":[
-            ""
+        "steps": [
+            "Preheat the oven to 350°F (175°C). Line a baking sheet with parchment paper.",
+            "In a medium bowl, whisk together the flour, baking powder, and salt.",
+            "In a large bowl, beat the butter and sugar substitute until light and fluffy.",
+            "Add the applesauce and vanilla extract to the butter mixture, and beat until combined.",
+            "Gradually mix in the dry ingredients until a dough forms.",
+            "Roll the dough into 1-inch balls and place them on the prepared baking sheet.",
+            "Flatten each ball slightly with the back of a spoon.",
+            "Bake for 10–12 minutes or until the edges are golden.",
+            "Let the cookies cool on the baking sheet for 5 minutes before transferring them to a wire rack."
         ]
     },
-    "Explanation": "NOT NEEDED"
+    "Explanation": "Sugar substitute may not chemically stable at high temperature, unpleasent compound could be produce in baking process"
     },
     # 6
     { 
