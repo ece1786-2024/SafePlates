@@ -1,3 +1,4 @@
+# 2 seafood; 3 nut; 2 dairy; 2 egg; 1 low-sugar; 1 Low-calorie
 safe = [
     # 1
     {
@@ -486,8 +487,65 @@ safe = [
             "Serve warm, optionally topped with nutritional yeast for a cheesy, wheat-free topping."
         ]
     }
-    }
+    },
+    # 11
+    {
+    "dish_name": "Chocolate Chip Cookies",
+    "restriction": "Egg-free",
+    "original_recipe": {
+        "ingredients": [
+            "1 cup all-purpose flour",
+            "1/2 tsp baking soda",
+            "1/4 tsp salt",
+            "1/2 cup unsalted butter, softened",
+            "1/2 cup brown sugar",
+            "1/4 cup granulated sugar",
+            "1 large egg",
+            "1 tsp vanilla extract",
+            "1 cup chocolate chips"
+        ],
+        "steps": [
+            "Preheat the oven to 350°F (175°C) and line a baking sheet with parchment paper.",
+            "In a bowl, mix together the flour, baking soda, and salt.",
+            "In a separate bowl, beat the butter, brown sugar, and granulated sugar until creamy.",
+            "Add the egg and vanilla extract to the butter mixture and mix well.",
+            "Gradually add the dry ingredients to the wet ingredients and mix until combined.",
+            "Fold in the chocolate chips.",
+            "Drop spoonfuls of dough onto the prepared baking sheet.",
+            "Bake for 10-12 minutes or until the edges are golden brown.",
+            "Cool on a wire rack before serving."
+        ]
+    },
+    "modified_recipe": {
+        "ingredients": [
+            "1 cup all-purpose flour",
+            "1/2 tsp baking soda",
+            "1/4 tsp salt",
+            "1/2 cup unsalted butter, softened",
+            "1/2 cup brown sugar",
+            "1/4 cup granulated sugar",
+            "1/4 cup mashed banana",
+            "1 tsp vanilla extract",
+            "1 cup chocolate chips"
+        ],
+        "steps": [
+            "Preheat the oven to 350°F (175°C) and line a baking sheet with parchment paper.",
+            "In a bowl, mix together the flour, baking soda, and salt.",
+            "In a separate bowl, beat the butter, brown sugar, and granulated sugar until creamy.",
+            "Add the mashed banana and vanilla extract to the butter mixture and mix well.",
+            "Gradually add the dry ingredients to the wet ingredients and mix until combined.",
+            "Fold in the chocolate chips.",
+            "Drop spoonfuls of dough onto the prepared baking sheet.",
+            "Bake for 10-12 minutes or until the edges are golden brown.",
+            "Cool on a wire rack before serving."
+        ]
+    },
+    "Explanation": "NOT NEEDED"
+}
+
 ]
+
+# 3 seafood; 2 nut; 3 dairy; 2 egg;
 
 non_safe = [
     # 1
@@ -994,7 +1052,56 @@ non_safe = [
             "Serve warm, garnished with chopped parsley."
         ]
     }
+    },
+    # 11
+    {
+    "dish_name": "Soybean Stir-Fry",
+    "restriction": "Soybeans",
+    "original_recipe": {
+        "ingredients": [
+            "1 cup cooked soybeans",
+            "2 cups mixed vegetables (carrots, bell peppers, broccoli)",
+            "2 tbsp soy sauce",
+            "1 tbsp sesame oil",
+            "2 cloves garlic, minced",
+            "1 tsp grated ginger",
+            "Salt and pepper to taste",
+            "Sesame seeds for garnish (optional)"
+        ],
+        "steps": [
+            "Heat sesame oil in a large skillet or wok over medium heat.",
+            "Add garlic and ginger, sautéing until fragrant.",
+            "Add the mixed vegetables and stir-fry for 5-7 minutes until tender-crisp.",
+            "Stir in the cooked soybeans and soy sauce.",
+            "Cook for an additional 2-3 minutes, stirring frequently.",
+            "Season with salt and pepper to taste.",
+            "Serve hot, garnished with sesame seeds if desired."
+        ]
+    },
+    "modified_recipe": {
+        "ingredients": [
+            "1 cup cooked soybeans",
+            "2 cups mixed vegetables (carrots, bell peppers, broccoli)",
+            "2 tbsp soy-free coconut aminos (soy substitute)",
+            "1 tbsp sesame oil",
+            "2 cloves garlic, minced",
+            "1 tsp grated ginger",
+            "Salt and pepper to taste",
+            "Sesame seeds for garnish (optional)"
+        ],
+        "steps": [
+            "Heat sesame oil in a large skillet or wok over medium heat.",
+            "Add garlic and ginger, sautéing until fragrant.",
+            "Add the mixed vegetables and stir-fry for 5-7 minutes until tender-crisp.",
+            "Stir in the cooked soybeans and coconut aminos.",
+            "Cook for an additional 2-3 minutes, stirring frequently.",
+            "Season with salt and pepper to taste.",
+            "Serve hot, garnished with sesame seeds if desired."
+        ]
+    },
+    "Explanation": "NOT NEEDED"
     }
+
 ]
 
 caution = [
@@ -1232,74 +1339,132 @@ caution = [
     "Explanation": "Sugar substitute may not chemically stable at high temperature, unpleasent compound could be produce in baking process"
     },
     # 6
-    { 
-    "dish_name": " ",
-    "restriction": "",
+    {
+    "dish_name": "Miso Soup",
+    "restriction": "Fish-free",
     "original_recipe": {
         "ingredients": [
-            ""
+            "4 cups dashi stock",
+            "3 tbsp miso paste",
+            "1/2 cup cubed tofu",
+            "1/2 cup sliced green onions",
+            "1/2 cup fish (e.g., cod or salmon), cut into bite-sized pieces",
+            "1 sheet nori, cut into small strips (optional)"
         ],
-        "steps":[
-            ""
+        "steps": [
+            "In a medium-sized pot, bring the dashi stock to a gentle simmer over medium heat.",
+            "Dissolve the miso paste in a small bowl with a ladleful of hot dashi, then return it to the pot.",
+            "Add the cubed tofu, sliced green onions, and fish pieces to the pot.",
+            "Simmer gently for 5-7 minutes, or until the fish is cooked through.",
+            "Add nori strips if desired, then serve the soup hot in individual bowls."
         ]
     },
     "modified_recipe": {
         "ingredients": [
-            ""
+            "4 cups dashi stock",
+            "3 tbsp miso paste",
+            "1/2 cup cubed tofu",
+            "1/2 cup sliced green onions",
+            "1/2 cup shrimp, peeled and deveined",
+            "1 sheet nori, cut into small strips (optional)"
         ],
-        "steps":[
-            ""
+        "steps": [
+            "In a medium-sized pot, bring the dashi stock to a gentle simmer over medium heat.",
+            "Dissolve the miso paste in a small bowl with a ladleful of hot dashi, then return it to the pot.",
+            "Add the cubed tofu, sliced green onions, and shrimp to the pot.",
+            "Simmer gently for 3-5 minutes, or until the shrimp turn pink and are cooked through.",
+            "Add nori strips if desired, then serve the soup hot in individual bowls."
         ]
     },
-    "Explanation": "NOT NEEDED"
+    "Explanation": "Crustaceans can be consider as seafood, so it is possible to trigger fish allergy"
     },
     # 7
-    { 
-    "dish_name": " ",
-    "restriction": "",
+    {
+    "dish_name": "Vanilla Pudding",
+    "restriction": "Fish-free",
     "original_recipe": {
         "ingredients": [
-            ""
+            "2 cups whole milk",
+            "1/2 cup sugar",
+            "1 tsp vanilla extract",
+            "2 tbsp gelatin (derived from fish)",
+            "1/4 cup cold water"
         ],
-        "steps":[
-            ""
+        "steps": [
+            "In a small bowl, sprinkle the gelatin over cold water and let it bloom for 5 minutes.",
+            "In a saucepan, heat the milk and sugar over medium heat until the sugar dissolves, but do not let it boil.",
+            "Stir the bloomed gelatin into the warm milk mixture until completely dissolved.",
+            "Remove the saucepan from heat and stir in the vanilla extract.",
+            "Pour the mixture into individual serving dishes and refrigerate for at least 4 hours or until set."
         ]
     },
     "modified_recipe": {
         "ingredients": [
-            ""
+            "2 cups whole milk",
+            "1/2 cup sugar",
+            "1 tsp vanilla extract",
+            "2 tbsp gelatin (derived from fish)",
+            "1/4 cup cold water"
         ],
-        "steps":[
-            ""
+        "steps": [
+            "In a small bowl, sprinkle the gelatin over cold water and let it bloom for 5 minutes.",
+            "In a saucepan, heat the milk and sugar over medium heat until the sugar dissolves, but do not let it boil.",
+            "Stir the bloomed gelatin into the warm milk mixture until completely dissolved.",
+            "Remove the saucepan from heat and stir in the vanilla extract.",
+            "Pour the mixture into individual serving dishes and refrigerate for at least 4 hours or until set."
         ]
     },
-    "Explanation": "NOT NEEDED"
+    "Explanation": "Gelatin: Gelatin is often made from fish skin and bones"
     },
     # 8
-    { 
-    "dish_name": " ",
-    "restriction": "",
+    {
+    "dish_name": "Creamy Alfredo Pasta",
+    "restriction": "Cow's Milk",
     "original_recipe": {
         "ingredients": [
-            ""
+            "12 oz pasta (fettuccine or spaghetti)",
+            "2 tbsp butter",
+            "2 cloves garlic, minced",
+            "1 cup heavy cream (cow's milk)",
+            "1/2 cup grated Parmesan cheese",
+            "Salt and pepper to taste",
+            "Chopped parsley for garnish (optional)"
         ],
-        "steps":[
-            ""
+        "steps": [
+            "Cook the pasta according to package instructions until al dente. Drain and set aside.",
+            "In a large skillet, melt the butter over medium heat and sauté the minced garlic until fragrant.",
+            "Add the heavy cream and bring it to a gentle simmer.",
+            "Stir in the Parmesan cheese until melted and the sauce is smooth.",
+            "Season with salt and pepper to taste.",
+            "Toss the cooked pasta in the sauce until well coated.",
+            "Serve hot, garnished with chopped parsley if desired."
         ]
     },
     "modified_recipe": {
         "ingredients": [
-            ""
+            "12 oz pasta (fettuccine or spaghetti)",
+            "2 tbsp butter",
+            "2 cloves garlic, minced",
+            "1 cup goat milk cream",
+            "1/2 cup grated goat cheese",
+            "Salt and pepper to taste",
+            "Chopped parsley for garnish (optional)"
         ],
-        "steps":[
-            ""
+        "steps": [
+            "Cook the pasta according to package instructions until al dente. Drain and set aside.",
+            "In a large skillet, melt the butter over medium heat and sauté the minced garlic until fragrant.",
+            "Add the goat milk cream and bring it to a gentle simmer.",
+            "Stir in the goat cheese until melted and the sauce is smooth.",
+            "Season with salt and pepper to taste.",
+            "Toss the cooked pasta in the sauce until well coated.",
+            "Serve hot, garnished with chopped parsley if desired."
         ]
     },
-    "Explanation": "NOT NEEDED"
+    "Explanation": "If you are allergy to milk, you might be allergy to dairy product"
     },
     # 9
     { 
-    "dish_name": " ",
+    "dish_name": "",
     "restriction": "",
     "original_recipe": {
         "ingredients": [
@@ -1321,7 +1486,7 @@ caution = [
     },
     # 10
     { 
-    "dish_name": " ",
+    "dish_name": "",
     "restriction": "",
     "original_recipe": {
         "ingredients": [
