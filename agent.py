@@ -18,26 +18,44 @@ def generator(dish_name, original_recipe, allergic_ingredients):
     """
     # Create the prompt based on whether an original recipe was provided
     if original_recipe:
-        prompt = (
-            f"As an experienced chef and nutrition expert, you are tasked with modifying recipes to ensure they are safe, "
-            f"nutritionally balanced, and inclusive for individuals with specific dietary restrictions. "
-            f"Your goal is to provide high-quality substitutions that maintain the taste, texture, and cultural authenticity of the dish.\n\n"
-            f"Dish Name: {dish_name}\n\n"
-            f"Original Recipe:\n{original_recipe}\n\n"
-            f"Allergic Ingredients:\n{allergic_ingredients}\n\n"
-            f"Please provide a substituted recipe that avoids the specified allergic ingredients while preserving the dish's integrity, "
-            f"ensuring it remains enjoyable and nutritionally balanced. Include clear ingredient substitutions and adjusted instructions if necessary."
-        )
+        prompt = f"""As an experienced chef and nutrition expert, your task is to modify recipes to ensure they are safe,
+    nutritionally balanced, and inclusive for individuals with specific dietary restrictions. Your goal is to provide
+    high-quality substitutions that maintain the taste, texture, and cultural authenticity of the dish.
+
+    **Dish Name:** {dish_name}
+
+    **Original Recipe:**
+    {original_recipe}
+
+    **Allergic Ingredients to Avoid:**
+    {allergic_ingredients}
+
+    Please provide a substituted recipe that omits the specified allergic ingredients while preserving the dish's integrity.
+    Ensure it remains enjoyable and nutritionally balanced. Include clear ingredient substitutions and adjust the instructions
+    if necessary. Pay special attention to ingredients that are commonly ambiguous or have mixed sources, such as oils, sauces,
+    or additives. Specify the specific subtype or variant of these ingredients to ensure clarity and safety. 
+
+    **Important:** Provide only the modified recipe with the ingredients list and step-by-step instructions. Do not include any
+    additional commentary or introductions.
+    """
+
     else:
-        prompt = (
-            f"As an experienced chef and nutrition expert, you are tasked with creating a recipe that avoids specific ingredients "
-            f"due to dietary restrictions. Your goal is to ensure the recipe is safe, nutritionally balanced, and inclusive, "
-            f"while also being culturally appropriate and maintaining high standards of taste and texture.\n\n"
-            f"Dish Name: {dish_name}\n\n"
-            f"Allergic Ingredients to Avoid:\n{allergic_ingredients}\n\n"
-            f"Please create a new recipe for {dish_name} that avoids the specified allergic ingredients. Ensure the recipe is clear, "
-            f"nutritionally balanced, and culturally authentic. Provide detailed ingredients and step-by-step instructions."
-        )
+        prompt = f"""As an experienced chef and nutrition expert, your task is to create a recipe that avoids specific ingredients
+    due to dietary restrictions. Your goal is to ensure the recipe is safe, nutritionally balanced, and inclusive,
+    while being culturally appropriate and maintaining high standards of taste and texture.
+
+    **Dish Name:** {dish_name}
+
+    **Allergic Ingredients to Avoid:**
+    {allergic_ingredients}
+
+    Please create a new recipe for **{dish_name}** that omits the specified allergic ingredients. Ensure the recipe is clear,
+    nutritionally balanced, and culturally authentic. Provide detailed ingredients and step-by-step instructions.
+    Pay special attention to ingredients that are commonly ambiguous or have mixed sources, such as oils, sauces, or additives.
+    Specify the specific subtype or variant of these ingredients to ensure clarity and safety.
+
+    **Important:** Provide only the recipe with the ingredients list and step-by-step instructions. Do not include any
+    additional commentary or introductions."""
 
     try:
       # Generate the substituted recipe using GPT-4
