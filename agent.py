@@ -2,9 +2,9 @@ from openai import OpenAI
 
 
 # Initialize OpenAI client
-client = OpenAI(api_key='your_api_key_here')  # Replace with your API key
+client = OpenAI(api_key="")  # Replace with your API key
 
-def generator(dish_name, original_recipe, allergic_ingredients):
+def generator(dish_name, original_recipe, allergic_ingredients, evaluator_comment=None):
     """
     Generates a safe recipe based on the original recipe and user restrictions.
 
@@ -16,28 +16,70 @@ def generator(dish_name, original_recipe, allergic_ingredients):
     Returns:
     - new_recipe (str): The modified recipe that adheres to the restrictions.
     """
+    
+    if evaluator_comment:
+        prompt = prompt = f"""As an experienced chef and nutrition expert, your task is to modify recipes to ensure they are safe,
+    nutritionally balanced, and inclusive for individuals with specific dietary restrictions. Your goal is to provide
+    high-quality substitutions that maintain the taste, texture, and cultural authenticity of the dish.
+    **suggestions and rules:** {evaluator_comment}
+    Please also strongly follow the suggestions and rules above
+
+    **Dish Name:** {dish_name}
+
+    **Original Recipe:**
+    {original_recipe}
+
+    **Allergic Ingredients to Avoid:**
+    {allergic_ingredients}
+
+    Please provide a substituted recipe that omits the specified allergic ingredients while preserving the dish's integrity.
+    Ensure it remains enjoyable and nutritionally balanced. Include clear ingredient substitutions and adjust the instructions
+    if necessary. Pay special attention to ingredients that are commonly ambiguous or have mixed sources, such as oils, sauces,
+    or additives. Specify the specific subtype or variant of these ingredients to ensure clarity and safety. 
+
+    **Important:** Provide only the modified recipe with the ingredients list and step-by-step instructions. Do not include any
+    additional commentary or introductions.
+    """
     # Create the prompt based on whether an original recipe was provided
-    if original_recipe:
-        prompt = (
-            f"As an experienced chef and nutrition expert, you are tasked with modifying recipes to ensure they are safe, "
-            f"nutritionally balanced, and inclusive for individuals with specific dietary restrictions. "
-            f"Your goal is to provide high-quality substitutions that maintain the taste, texture, and cultural authenticity of the dish.\n\n"
-            f"Dish Name: {dish_name}\n\n"
-            f"Original Recipe:\n{original_recipe}\n\n"
-            f"Allergic Ingredients:\n{allergic_ingredients}\n\n"
-            f"Please provide a substituted recipe that avoids the specified allergic ingredients while preserving the dish's integrity, "
-            f"ensuring it remains enjoyable and nutritionally balanced. Include clear ingredient substitutions and adjusted instructions if necessary."
-        )
+    elif original_recipe:
+        prompt = f"""As an experienced chef and nutrition expert, your task is to modify recipes to ensure they are safe,
+    nutritionally balanced, and inclusive for individuals with specific dietary restrictions. Your goal is to provide
+    high-quality substitutions that maintain the taste, texture, and cultural authenticity of the dish.
+
+    **Dish Name:** {dish_name}
+
+    **Original Recipe:**
+    {original_recipe}
+
+    **Allergic Ingredients to Avoid:**
+    {allergic_ingredients}
+
+    Please provide a substituted recipe that omits the specified allergic ingredients while preserving the dish's integrity.
+    Ensure it remains enjoyable and nutritionally balanced. Include clear ingredient substitutions and adjust the instructions
+    if necessary. Pay special attention to ingredients that are commonly ambiguous or have mixed sources, such as oils, sauces,
+    or additives. Specify the specific subtype or variant of these ingredients to ensure clarity and safety. 
+
+    **Important:** Provide only the modified recipe with the ingredients list and step-by-step instructions. Do not include any
+    additional commentary or introductions.
+    """
+
     else:
-        prompt = (
-            f"As an experienced chef and nutrition expert, you are tasked with creating a recipe that avoids specific ingredients "
-            f"due to dietary restrictions. Your goal is to ensure the recipe is safe, nutritionally balanced, and inclusive, "
-            f"while also being culturally appropriate and maintaining high standards of taste and texture.\n\n"
-            f"Dish Name: {dish_name}\n\n"
-            f"Allergic Ingredients to Avoid:\n{allergic_ingredients}\n\n"
-            f"Please create a new recipe for {dish_name} that avoids the specified allergic ingredients. Ensure the recipe is clear, "
-            f"nutritionally balanced, and culturally authentic. Provide detailed ingredients and step-by-step instructions."
-        )
+        prompt = f"""As an experienced chef and nutrition expert, your task is to create a recipe that avoids specific ingredients
+    due to dietary restrictions. Your goal is to ensure the recipe is safe, nutritionally balanced, and inclusive,
+    while being culturally appropriate and maintaining high standards of taste and texture.
+
+    **Dish Name:** {dish_name}
+
+    **Allergic Ingredients to Avoid:**
+    {allergic_ingredients}
+
+    Please create a new recipe for **{dish_name}** that omits the specified allergic ingredients. Ensure the recipe is clear,
+    nutritionally balanced, and culturally authentic. Provide detailed ingredients and step-by-step instructions.
+    Pay special attention to ingredients that are commonly ambiguous or have mixed sources, such as oils, sauces, or additives.
+    Specify the specific subtype or variant of these ingredients to ensure clarity and safety.
+
+    **Important:** Provide only the recipe with the ingredients list and step-by-step instructions. Do not include any
+    additional commentary or introductions."""
 
     try:
       # Generate the substituted recipe using GPT-4
@@ -105,7 +147,7 @@ def evaluator(dish_name, original_recipe, modified_recipe, restrictions, testing
         •	For allergies, not only ingredient safety needs to be assert, but also cross-reactivity risk and cross-contamination risk needs to be checked.
         •	For dietary restrictions, ensure all ingredients comply with the stated guidelines.
         •  Cooking Steps: Evaluate whether the steps are logical and feasible with the modified ingredients.
-        If the modified recipe passes all checks, the answer is simply “Yes” (valid modification). Avoid any additional evaluation or commentary. If any check fails, depending on the reason it fails, if it violates the hard rule such as including forbidden ingredients, the answer should be “No” and follow with an explanation in separate paragraphs. If the check fails because of potential risk or ambiguity, the answer should be “Caution” and follow the points need to be watch out.
+        If the modified recipe passes all checks, the answer is simply “Yes” (valid modification). Avoid any additional evaluation or commentary. If any check fails, depending on the reason it fails, if it violates the hard rule such as including forbidden ingredients, the answer should be “No” and follow with an explanation in separate paragraphs. If the check fails because of potential risk or ambiguity, the answer should be “Caution”.
         
         Note: Only responsed "Yes" or "No" or "Caution"
         ### Response: {"Yes" or "No" or "Caution"}
@@ -146,9 +188,10 @@ def agent_flow(dish_name, original_recipe, restrictions):
     new_recipe = generator(dish_name, original_recipe, restrictions)
     evaluation = evaluator(dish_name, original_recipe, new_recipe, restrictions)
 
-    # if evaluation.lower().startswith("yes"):
-    #     return new_recipe
-    # else:
-    #     return "No valid substitution available"
+    if 'no' in evaluation.lower() and len(evaluation) < 5:
+        evaluation = evaluator(dish_name, original_recipe, new_recipe, restrictions)
+        if 'no' in evaluation.lower() and len(evaluation) < 5:
+            return f"It is not possible to generate a new recipe that satisfy your restrictions!"
+            
     return f"The newly generated recipe based on your restrictions is:\n\n{new_recipe}\n\nEvaluation of the recipe:\n{evaluation}"
 

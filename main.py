@@ -29,17 +29,19 @@ def command_line_UI():
     dish_name, original_recipe, allergic_ingredients = get_user_input()
 
     # Generate substituted recipe
-    substituted_recipe = generator(dish_name, original_recipe, allergic_ingredients)
+    substituted_recipe = agent_flow(dish_name, original_recipe, allergic_ingredients)
 
     # Display the result
-    print("\nSubstituted Recipe:\n")
-    print(substituted_recipe)
+    print("\n### Substituted Recipe:\n")
+    print(f"{substituted_recipe}\n")
+
 
 
 # Gradio interface
 def generate_in_gradio(dish_name, original_recipe, allergic_ingredients):
     substituted_recipe = agent_flow(dish_name, original_recipe, allergic_ingredients)
-    return substituted_recipe
+    # Returning Markdown-compatible result
+    return f"### Substituted Recipe:\n{substituted_recipe}"
 
 
 def web_UI():
@@ -49,31 +51,31 @@ def web_UI():
     # Custom CSS for styling buttons and textboxes
     css = """
     .gradio-container {background-color: #DBE8B4}
-    
+
     #logo {
         display: block;
         margin: 0 auto; /* Center the logo horizontally */
-        max-width: 100%; /* Ensure the logo doesn't overflow */
+        max-width: 100%; /* Ensure the logo doesn’t overflow */
         height: auto; /* Maintain aspect ratio */
     }
-    
+
     #submit_button {
-        background-color: #6EB05A; /* Blue background */
+        background-color: #6EB05A; /* Green background */
         color: white; /* White text */
-        font-size: 18px;
+        font-size: 24px; /* Increased font size */
         font-weight: bold;
-        padding: 10px 20px;
+        padding: 15px 25px; /* Increased padding */
         border-radius: 5px;
         border: none;
         cursor: pointer;
     }
 
     #submit_button:hover {
-        background-color: #468915; /* Darker blue on hover */
+        background-color: #468915; /* Darker green on hover */
     }
 
     .gr-textbox {
-        border: 2px solid #007bff; /* Blue border */
+        border: 5px solid #007bff; /* Blue border */
         border-radius: 5px;
     }
 
@@ -85,7 +87,20 @@ def web_UI():
         border-color: #0056b3; /* Darker blue on focus */
         box-shadow: 0 0 5px #0056b3; /* Glow effect on focus */
     }
+    
+    .gr-textbox label {
+        font-size: 24px !important; /* Larger font size for Textbox labels */
+        font-weight: bold; /* Optional: Make Textbox labels bold */
+        color: #333; /* Label color */
+    }
+    
+    .gr-checkbox label {
+        font-size: 20px; /* Normal font size for Checkbox labels */
+        font-weight: normal; /* Default weight for Checkbox labels */
+        color: #333; /* Label color for Checkbox */
+    }
     """
+
 
     # Create the Gradio app
     with gr.Blocks(css=css) as app:
@@ -122,8 +137,8 @@ def web_UI():
                 )
 
                 allergic_ingredients = gr.Textbox(
-                    label="Allergic Ingredients",
-                    placeholder="Enter ingredients to substitute (comma-separated)",
+                    label="Special Requirements",
+                    placeholder="Enter special requirements (e.g., seafood-free, gluten-free, vegetarian)",
                     lines=2
                 )
 
@@ -136,7 +151,7 @@ def web_UI():
             gr.Markdown(
                 "<h3 style='text-align: center; font-size: 24px;'>Substituted Recipe</h3>"
             )
-            output = gr.Textbox(label="", interactive=False, lines=6)
+            output = gr.Markdown()
 
         # Define button click action
         submit_button.click(fn=generate_in_gradio, inputs=[dish_name, original_recipe, allergic_ingredients],
