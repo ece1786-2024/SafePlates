@@ -23,6 +23,26 @@ def get_user_input():
 
     return dish_name, original_recipe, allergic_ingredients
 
+def get_user_input_on_validator():
+    # Gather the necessary information from the user
+    dish_name = input("Enter the dish name (required): ").strip()
+    while not dish_name:
+        print("Dish name is required. Please enter a valid dish name.")
+        dish_name = input("Enter the dish name (required): ").strip()
+
+    original_recipe = input("Enter the original recipe (optional, leave blank if none): ").strip()
+
+    allergic_ingredients = input("Enter the ingredients to substitute (required, separate by commas): ").strip()
+    while not allergic_ingredients:
+        print("Allergic ingredients are required. Please enter at least one ingredient to avoid.")
+        allergic_ingredients = input("Enter the ingredients to substitute (required, separate by commas): ").strip()
+
+    modified_recipe = input("Enter the modified recipe: ").strip()
+    while not modified_recipe:
+        print("Modified recipe are required.")
+        modified_recipe = input("Enter the modified recipe: ").strip()
+
+    return dish_name, original_recipe, allergic_ingredients, modified_recipe
 
 def command_line_UI():
     # Get user inputs
@@ -35,6 +55,15 @@ def command_line_UI():
     print("\n### Substituted Recipe:\n")
     print(f"{substituted_recipe}\n")
 
+def command_line_UI_on_validator():
+    # Get user inputs
+    dish_name, original_recipe, allergic_ingredients, modified_recipe = get_user_input_on_validator()
+
+    evaluator_result = evaluator(dish_name, original_recipe, allergic_ingredients, modified_recipe)
+
+    # Display the result
+    print("\n### Evaluation result:\n")
+    print(f"{evaluator_result}\n")
 
 
 # Gradio interface
@@ -120,21 +149,21 @@ def web_UI():
                 dish_name = gr.Textbox(label="Dish Name", placeholder="Enter the dish name", lines=1)
 
                 # Checkbox and Original Recipe Section
-                use_original_recipe = gr.Checkbox(label="Do you want to input an original recipe?")
+                # use_original_recipe = gr.Checkbox(label="Do you want to input an original recipe?")
                 original_recipe = gr.Textbox(label="Original Recipe",
                                              placeholder="Enter the original recipe",
-                                             lines=3, visible=False)
+                                             lines=3)
 
-                def toggle_textbox(use_recipe):
-                    if use_recipe:
-                        return gr.update(visible=True), ""
-                    return gr.update(visible=False), "If you want to input an original recipe, check the box above."
-
-                use_original_recipe.change(
-                    fn=toggle_textbox,
-                    inputs=[use_original_recipe],
-                    outputs=[original_recipe, gr.Text(label="", interactive=False)]
-                )
+                # def toggle_textbox(use_recipe):
+                #     if use_recipe:
+                #         return gr.update(visible=True), ""
+                #     return gr.update(visible=False), "If you want to input an original recipe, check the box above."
+                #
+                # use_original_recipe.change(
+                #     fn=toggle_textbox,
+                #     inputs=[use_original_recipe],
+                #     outputs=[original_recipe, gr.Text(label="", interactive=False)]
+                # )
 
                 allergic_ingredients = gr.Textbox(
                     label="Special Requirements",
@@ -208,6 +237,7 @@ def run_test_case(output_file="validated_test_case_results.txt"):
 if __name__ == "__main__":
     # uncomment this for interact within the command line interface
     # command_line_UI()
+    # command_line_UI_on_validator()
 
     # uncomment this for the website-based UI
     web_UI()
