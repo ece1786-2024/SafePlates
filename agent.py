@@ -21,7 +21,8 @@ def generator(dish_name, original_recipe, allergic_ingredients, evaluator_commen
         prompt = prompt = f"""As an experienced chef and nutrition expert, your task is to modify recipes to ensure they are safe,
     nutritionally balanced, and inclusive for individuals with specific dietary restrictions. Your goal is to provide
     high-quality substitutions that maintain the taste, texture, and cultural authenticity of the dish.
-    Please strongly follow and double check the suggestions here:{evaluator_comment}
+    **suggestions and rules:** {evaluator_comment}
+    Please also strongly follow the suggestions and rules above
 
     **Dish Name:** {dish_name}
 
