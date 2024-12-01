@@ -2,9 +2,9 @@ from openai import OpenAI
 
 
 # Initialize OpenAI client
-client = OpenAI(api_key='your_api_key_here')  # Replace with your API key
+client = OpenAI(api_key="")  # Replace with your API key
 
-def generator(dish_name, original_recipe, allergic_ingredients):
+def generator(dish_name, original_recipe, allergic_ingredients, evaluator_comment=None):
     """
     Generates a safe recipe based on the original recipe and user restrictions.
 
@@ -16,8 +16,32 @@ def generator(dish_name, original_recipe, allergic_ingredients):
     Returns:
     - new_recipe (str): The modified recipe that adheres to the restrictions.
     """
+    
+    if evaluator_comment:
+        prompt = prompt = f"""As an experienced chef and nutrition expert, your task is to modify recipes to ensure they are safe,
+    nutritionally balanced, and inclusive for individuals with specific dietary restrictions. Your goal is to provide
+    high-quality substitutions that maintain the taste, texture, and cultural authenticity of the dish.
+    **suggestions and rules:** {evaluator_comment}
+    Please also strongly follow the suggestions and rules above
+
+    **Dish Name:** {dish_name}
+
+    **Original Recipe:**
+    {original_recipe}
+
+    **Allergic Ingredients to Avoid:**
+    {allergic_ingredients}
+
+    Please provide a substituted recipe that omits the specified allergic ingredients while preserving the dish's integrity.
+    Ensure it remains enjoyable and nutritionally balanced. Include clear ingredient substitutions and adjust the instructions
+    if necessary. Pay special attention to ingredients that are commonly ambiguous or have mixed sources, such as oils, sauces,
+    or additives. Specify the specific subtype or variant of these ingredients to ensure clarity and safety. 
+
+    **Important:** Provide only the modified recipe with the ingredients list and step-by-step instructions. Do not include any
+    additional commentary or introductions.
+    """
     # Create the prompt based on whether an original recipe was provided
-    if original_recipe:
+    elif original_recipe:
         prompt = f"""As an experienced chef and nutrition expert, your task is to modify recipes to ensure they are safe,
     nutritionally balanced, and inclusive for individuals with specific dietary restrictions. Your goal is to provide
     high-quality substitutions that maintain the taste, texture, and cultural authenticity of the dish.
