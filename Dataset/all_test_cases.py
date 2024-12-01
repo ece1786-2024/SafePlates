@@ -1,5 +1,5 @@
 unsafe = [
-# Case 1: New recipe does not satisfy the ingredient requirements
+# Case 1: New recipe does not satisfy the ingredient requirements, introduce new unsafe ingredient
 {
     "dish_name": "Peanut Butter Cookies",
     "restriction": "peanuts",
@@ -32,6 +32,7 @@ unsafe = [
 },
 
 # Case 2: New recipe satisfies the requirement, but the cooking step can introduce food poisoning
+    # TODO
 {
     "dish_name": "Grilled Chicken Salad",
     "restriction": "dairy",
@@ -61,6 +62,7 @@ unsafe = [
 },
 
 # Case 3: New recipe introduces a new form of dangerous ingredient different from the restriction but still causes food poisoning
+    # TODO
 {
     "dish_name": "Seafood Paella",
     "restriction": "shrimp",
@@ -489,7 +491,48 @@ unsafe = [
             "Serve the buttery mixture as a topping or side, as it cannot be used as a gluten-free replacement for the original dish."
         ]
     }
-}
+},
+### 3. new recipe introduce new form of dangerous ingredient different from the requirement but still would cause food poisoning
+{
+    "dish_name": "Banana Smoothie",
+    "restriction": "lactose-free",
+    "original_recipe": {
+        "ingredients": [
+            "2 ripe bananas",
+            "1 cup cow's milk",
+            "1 tablespoon chia seeds",
+            "1 tablespoon honey",
+            "½ teaspoon cinnamon",
+            "Ice cubes as needed"
+        ],
+        "steps": [
+            "Prepare Ingredients: Peel the bananas and gather all other ingredients.",
+            "Blend: In a blender, combine the bananas, cow's milk, chia seeds, honey, and cinnamon.",
+            "Add Ice: Add a handful of ice cubes to the blender for a chilled smoothie.",
+            "Blend Until Smooth: Blend all ingredients on high speed until the mixture is smooth and creamy.",
+            "Serve: Pour the smoothie into glasses and serve immediately."
+        ]
+    },
+    "modified_recipe": {
+        "ingredients": [
+            "2 ripe bananas",
+            "1 cup goat milk",
+            "1 tablespoon chia seeds",
+            "1 tablespoon maple syrup",
+            "½ teaspoon cinnamon",
+            "1 raw egg",
+            "Ice cubes as needed"
+        ],
+        "steps": [
+            "Prepare Ingredients: Peel the bananas and gather all other ingredients.",
+            "Blend: In a blender, combine the bananas, almond milk, chia seeds, maple syrup, cinnamon, and raw egg.",
+            "Add Ice: Add a handful of ice cubes to the blender for a chilled smoothie.",
+            "Blend Until Smooth: Blend all ingredients on high speed until the mixture is smooth and creamy.",
+            "Serve: Pour the smoothie into glasses and serve immediately while the egg is still raw."
+        ]
+    },
+    "Explanation": "replace the milk with goat milk."
+},
 
 ]
 
@@ -559,7 +602,7 @@ caution = [
 # Case 3: Excessive Use of Potentially Harmful Ingredients
 {
     "dish_name": "Spicy Chili",
-    "restriction": "none",
+    "restriction": "More spicy",
     "original_recipe": {
         "ingredients": [
             "1 lb ground beef",
@@ -599,7 +642,7 @@ caution = [
         "2 cups whole milk",
         "1/2 cup sugar",
         "1 tsp vanilla extract",
-        "2 tbsp gelatin (derived from fish)",
+        "2 tbsp gelatin",
         "1/4 cup cold water"
     ],
     "steps": [
@@ -615,7 +658,7 @@ caution = [
         "2 cups whole milk",
         "1/2 cup sugar",
         "1 tsp vanilla extract",
-        "2 tbsp gelatin (derived from fish)",
+        "2 tbsp gelatin",
         "1/4 cup cold water"
     ],
     "steps": [
@@ -732,47 +775,7 @@ caution = [
 "Explanation": "Sugar substitute usually much sweeter than table sugar, so use same amount could be unsafe if use in large dose. "
 },
 
-### 3. new recipe introduce new form of dangerous ingredient different from the requirement but still would cause food poisoning
-{
-    "dish_name": "Banana Smoothie",
-    "restriction": "lactose-free",
-    "original_recipe": {
-        "ingredients": [
-            "2 ripe bananas",
-            "1 cup cow's milk",
-            "1 tablespoon chia seeds",
-            "1 tablespoon honey",
-            "½ teaspoon cinnamon",
-            "Ice cubes as needed"
-        ],
-        "steps": [
-            "Prepare Ingredients: Peel the bananas and gather all other ingredients.",
-            "Blend: In a blender, combine the bananas, cow's milk, chia seeds, honey, and cinnamon.",
-            "Add Ice: Add a handful of ice cubes to the blender for a chilled smoothie.",
-            "Blend Until Smooth: Blend all ingredients on high speed until the mixture is smooth and creamy.",
-            "Serve: Pour the smoothie into glasses and serve immediately."
-        ]
-    },
-    "modified_recipe": {
-        "ingredients": [
-            "2 ripe bananas",
-            "1 cup goat milk",
-            "1 tablespoon chia seeds",
-            "1 tablespoon maple syrup",
-            "½ teaspoon cinnamon",
-            "1 raw egg",
-            "Ice cubes as needed"
-        ],
-        "steps": [
-            "Prepare Ingredients: Peel the bananas and gather all other ingredients.",
-            "Blend: In a blender, combine the bananas, almond milk, chia seeds, maple syrup, cinnamon, and raw egg.",
-            "Add Ice: Add a handful of ice cubes to the blender for a chilled smoothie.",
-            "Blend Until Smooth: Blend all ingredients on high speed until the mixture is smooth and creamy.",
-            "Serve: Pour the smoothie into glasses and serve immediately while the egg is still raw."
-        ]
-    },
-    "Explanation": "replace the milk with goat milk."
-},
+
 ##replace the milk with goat milk.
 
 ### 4. Allergen Cross-Reactivity: The recipe includes ingredients that can cause cross-reactivity in individuals with certain allergies. For instance, someone allergic to latex might also react to foods like bananas or avocados.
@@ -1006,7 +1009,7 @@ caution = [
 ## dose matters
 {
     "dish_name": "Butter Roasted Vegetables",
-    "restriction": "Gluten Free",
+    "restriction": "Lactose Free",
     "original_recipe": {
         "ingredients": [
             "1 pound baby carrots",
