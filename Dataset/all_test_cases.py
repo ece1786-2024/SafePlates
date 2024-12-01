@@ -397,7 +397,6 @@ unsafe = [
     }
 },
 
-
 ## wrong cooking step
 {
     "dish_name": "Long Bean, Potato, Pork, and Bean Stew",
