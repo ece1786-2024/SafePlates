@@ -661,50 +661,44 @@ caution = [
 
 #caution 3
 {
-"dish_name": "Classic Sugar Cookies",
+"dish_name": "No-Bake Sugar-Free Energy Balls",
 "restriction": "Sugar-free",
 "original_recipe": {
     "ingredients": [
-        "2 1/4 cups all-purpose flour",
-        "1/2 tsp baking powder",
-        "1/4 tsp salt",
-        "3/4 cup unsalted butter, softened",
-        "1 cup granulated sugar",
-        "1 large egg",
+        "1 cup rolled oats",
+        "1/2 cup almond butter",
+        "1/4 cup honey (or sugar-free syrup)",
+        "1/4 cup sugar substitute (like erythritol or stevia blend)",
+        "1/4 cup unsweetened shredded coconut",
+        "1/4 cup mini sugar-free chocolate chips",
         "1 tsp vanilla extract"
     ],
     "steps": [
-        "Preheat the oven to 350°F (175°C). Line a baking sheet with parchment paper.",
-        "In a medium bowl, whisk together the flour, baking powder, and salt.",
-        "In a large bowl, beat the butter and sugar until light and fluffy.",
-        "Add the egg and vanilla extract to the butter mixture, and beat until combined.",
-        "Gradually mix in the dry ingredients until a dough forms.",
-        "Roll the dough into 1-inch balls and place them on the prepared baking sheet.",
-        "Flatten each ball slightly with the back of a spoon.",
-        "Bake for 10–12 minutes or until the edges are golden.",
-        "Let the cookies cool on the baking sheet for 5 minutes before transferring them to a wire rack."
+        "In a large mixing bowl, combine the rolled oats, almond butter, honey (or sugar-free syrup), sugar substitute, shredded coconut, mini chocolate chips, and vanilla extract.",
+        "Stir until all the ingredients are evenly combined and form a dough-like consistency.",
+        "Using your hands, roll the mixture into 1-inch balls.",
+        "Place the energy balls on a baking sheet lined with parchment paper.",
+        "Refrigerate the energy balls for at least 30 minutes to set.",
+        "Store in an airtight container in the refrigerator for up to one week."
     ]
 },
 "modified_recipe": {
     "ingredients": [
-        "2 1/4 cups all-purpose flour",
-        "1/2 tsp baking powder",
-        "1/4 tsp salt",
-        "3/4 cup unsalted butter, softened",
-        "1 cup sugar substitute (like erythritol or stevia blend)",
-        "1/4 cup unsweetened applesauce (as an egg replacement)",
+        "1 cup rolled oats",
+        "1/2 cup peanut butter (or seed butter for nut-free option)",
+        "1/4 cup sugar-free syrup",
+        "1/4 cup sugar substitute (like erythritol or monk fruit sweetener)",
+        "1/4 cup unsweetened cocoa powder",
+        "1/4 cup chopped nuts or seeds (optional)",
         "1 tsp vanilla extract"
     ],
     "steps": [
-        "Preheat the oven to 350°F (175°C). Line a baking sheet with parchment paper.",
-        "In a medium bowl, whisk together the flour, baking powder, and salt.",
-        "In a large bowl, beat the butter and sugar substitute until light and fluffy.",
-        "Add the applesauce and vanilla extract to the butter mixture, and beat until combined.",
-        "Gradually mix in the dry ingredients until a dough forms.",
-        "Roll the dough into 1-inch balls and place them on the prepared baking sheet.",
-        "Flatten each ball slightly with the back of a spoon.",
-        "Bake for 10–12 minutes or until the edges are golden.",
-        "Let the cookies cool on the baking sheet for 5 minutes before transferring them to a wire rack."
+        "In a large mixing bowl, combine the rolled oats, peanut butter, sugar-free syrup, sugar substitute, cocoa powder, nuts or seeds (if using), and vanilla extract.",
+        "Mix until the ingredients are fully combined and form a sticky dough.",
+        "Using your hands, roll the mixture into 1-inch balls.",
+        "Place the balls on a tray lined with parchment paper.",
+        "Refrigerate for at least 30 minutes to firm up.",
+        "Store in an airtight container in the refrigerator for up to one week."
     ]
 },
 "Explanation": "Sugar substitute usually much sweeter than table sugar, so use same amount could be unsafe if use in large dose. "

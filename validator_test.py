@@ -28,7 +28,6 @@ if __name__ == "__main__":
                     split_result = result.split('\n')                    
                     validator_result = split_result[0]   
                     validator_result = validator_result.lower()
-                    print(repr(validator_result))
                     
                     if category == "Not Safe":
                         if "no" in validator_result:
