@@ -37,7 +37,7 @@ def generator(dish_name, original_recipe, allergic_ingredients, evaluator_commen
         or additives. Specify the specific subtype or variant of these ingredients to ensure clarity and safety. 
     
         **Important:** Provide only the modified recipe with the ingredients list and step-by-step instructions. Do not include any
-        additional commentary or introductions.
+        additional commentary or introductions, return in markdown.
         """
 
     else:
@@ -63,7 +63,7 @@ def generator(dish_name, original_recipe, allergic_ingredients, evaluator_commen
         ingredients to ensure clarity and safety.
 
         **Important:** Provide only the modified recipe with the ingredients list and step-by-step instructions. Do not include any
-        additional commentary or introductions.
+        additional commentary or introductions, return in markdown.
         """
 
     # else:
