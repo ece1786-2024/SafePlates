@@ -27,7 +27,7 @@ def read_and_display_recipes(file_name):
             )
         if "It is not possible to generate a new recipe" in result:
             count += 1
-    print(count)
+    print(f"\nCount of non-possible recipes: {count}")
 
 
 read_and_display_recipes(dataset)
