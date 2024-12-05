@@ -2,7 +2,7 @@ from openai import OpenAI
 
 
 # Initialize OpenAI client
-client = OpenAI(api_key='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')  # Replace with your API key
+client = OpenAI(api_key='your_keys')  # Replace with your API key
 
 
 def generator(dish_name, original_recipe, allergic_ingredients, evaluator_comments=None):
