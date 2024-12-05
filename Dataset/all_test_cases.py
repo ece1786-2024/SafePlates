@@ -426,6 +426,8 @@ safe = [
 
 ]
 
+# <<--------------------------------unsafe------------------------------->>
+
 unsafe = [
 # Case 1: New recipe does not satisfy the ingredient requirements, introduce new unsafe ingredient
 {
@@ -899,6 +901,7 @@ unsafe = [
 
 ]
 
+# <<--------------------------------caution------------------------------->>
 caution = [
 # Case 1: Allergen Cross-Reactivity
 {
