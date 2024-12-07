@@ -26,6 +26,18 @@ special_requirements = [
     "make it sugar free",
     "I am trying to loss weight",
 ]
+replace_meat_list = [
+        "If pork exist, replace it with other meat",
+        "If chicken exist in the recipe, replace it with other protein",
+        "If the recipe has beef in it, replace it with chicken",
+        "If the recipe has lamb in it, replace it with seafood",
+        "If exist, replace all the meat with beef",
+        "If duck meat exist, replace it with other meat",
+        "If fish exist, replace it with beef",
+        "If all the darkmeat if exist, with white meat",
+        "If seafood exist, replace it with other protein"
+
+    ]
 
 
 def read_and_display_recipes(file_name):
@@ -77,7 +89,7 @@ def read_and_save_recipes(file_name, output_file):
             # Prepare the inputs
             title = f"Title: {row['title']}"
             ingredients_and_directions = f"Ingredients: {row['ingredients']}\nDirections: {row['directions']}"
-            requirement = f"Requirement: {random.choice(special_requirements)}"
+            requirement = f"Requirement: {random.choice(replace_meat_list)}"
 
             # Process the inputs to get the result
             result = agent_flow(
@@ -108,4 +120,4 @@ def read_and_save_recipes(file_name, output_file):
 
 
 # Example usage
-read_and_save_recipes(dataset4, output4)
+read_and_save_recipes(dataset3, output3)
