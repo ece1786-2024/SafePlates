@@ -137,7 +137,7 @@ def web_UI():
         with gr.Column(elem_id="header", elem_classes=["center"]):
             gr.Image(logo_path, elem_id="logo", height=200, width=200)  # Logo at the top
             gr.Markdown(
-                "<h1 style='text-align: center; font-size: 36px;'>Allergic Ingredients Substitution</h1>"
+                "<h1 style='text-align: center; font-size: 36px;'>SafePlates</h1>"
             )
 
         # Input Section
