@@ -1,3 +1,5 @@
+import random
+
 import pandas as pd
 import glob
 from agent import agent_flow
@@ -12,6 +14,19 @@ output2 = "Testing/availability_test_result_2.txt"
 output3 = "Testing/availability_test_result_3.txt"
 output4 = "Testing/availability_test_result_4.txt"
 
+special_requirements = [
+    "make it suitable for elders",
+    "make it suitable for children",
+    "make it suitable for baby",
+    "make it suitable for pregnant women",
+    "for any chicken I want to use dark meat",
+    "for any chicken I want to use white meat",
+    "replace all meat by pork",
+    "replace all meat by shrimp",
+    "make it sugar free",
+    "I am trying to loss weight",
+]
+
 
 def read_and_display_recipes(file_name):
     """
@@ -25,14 +40,14 @@ def read_and_display_recipes(file_name):
     # Read the subset file
     df = pd.read_csv(file_name)
     count = 0
-    
+
     print(f"\n--- Recipes from {file_name} ---")
     for index, row in df.iterrows():
         result = agent_flow(
             f"Title: {row['title']}",
             str(f"Ingredients: {row['ingredients']}" + f"\nDirections: {row['directions']}"),
             str(row['requirment'])
-            )
+        )
         if "It is not possible to generate a new recipe" in result:
             count += 1
     print(f"\nCount of non-possible recipes: {count}")
@@ -62,13 +77,14 @@ def read_and_save_recipes(file_name, output_file):
             # Prepare the inputs
             title = f"Title: {row['title']}"
             ingredients_and_directions = f"Ingredients: {row['ingredients']}\nDirections: {row['directions']}"
-            requirement = f"Requirement: {row['requirment']}"
+            requirement = f"Requirement: {random.choice(special_requirements)}"
 
             # Process the inputs to get the result
             result = agent_flow(
                 title,
                 ingredients_and_directions,
-                requirement
+                requirement,
+                debug=True
             )
 
             # Save the inputs and result to the file
@@ -92,4 +108,4 @@ def read_and_save_recipes(file_name, output_file):
 
 
 # Example usage
-read_and_save_recipes(dataset3, output3)
+read_and_save_recipes(dataset4, output4)

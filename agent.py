@@ -2,8 +2,7 @@ from openai import OpenAI
 
 
 # Initialize OpenAI client
-client = OpenAI(api_key='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')  # Replace with your API key
-
+client = OpenAI()
 
 def generator(dish_name, original_recipe, allergic_ingredients, evaluator_comments=None):
     """
@@ -187,10 +186,12 @@ def evaluator(dish_name, original_recipe, modified_recipe, restrictions, testing
     except Exception as e:
         return f"An error occurred during recipe evaluation: {str(e)}"
   
-def agent_flow(dish_name, original_recipe, restrictions):
+def agent_flow(dish_name, original_recipe, restrictions, debug=False):
     max_retries = 1  # Set the maximum number of retries
     retry_count = 0
     evaluator_comments = 'Feedback: '
+    new_recipe = ""
+    evaluation = ""
 
     while retry_count <= max_retries:
         if retry_count == 0:
@@ -201,18 +202,20 @@ def agent_flow(dish_name, original_recipe, restrictions):
             evaluation = evaluator(dish_name, original_recipe, new_recipe, restrictions)
 
         # Check for standalone "no" in the evaluation
-        if 'no' in evaluation.lower().split():
+        if 'no' == evaluation.lower().split()[0]:
             retry_count += 1
             evaluator_comments += f"{evaluation}"  # Add feedback to the comments
 
         else:
             # Handle the case where the evaluation contains "caution"
-            if "caution" in evaluation.lower().split():
+            if "caution" == evaluation.lower().split()[0]:
                 return f"The newly generated recipe is:\n\n{new_recipe}\n\nEvaluation of the recipe:\n{evaluation}"
 
             # Handle the case where the evaluation contains "yes"
-            elif "yes" in evaluation.lower().split():
+            elif "yes" == evaluation.lower().split()[0]:
                 return f"The newly generated recipe is:\n\n{new_recipe}"
 
     # If the loop exits without success, return a failure message
+    if debug:
+        return f"It is not possible to generate a new recipe that satisfies your restrictions after {max_retries + 1} attempts!\n" + new_recipe + "\n" + evaluation
     return f"It is not possible to generate a new recipe that satisfies your restrictions after {max_retries + 1} attempts!"
