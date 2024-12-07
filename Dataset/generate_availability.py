@@ -33,6 +33,18 @@ def random_select_subsets_with_allergies(file_path, output_prefix, num_subsets, 
         "Lupin-free",
         "Celery-free"
     ]
+    replace_meat_list = [
+        "If pork exist, replace it with other meat",
+        "If chicken exist in the recipe, replace it with other protein",
+        "If the recipe has beef in it, repalce it with chicken",
+        "If the recipe has lamb in it, replace it with seafood",
+        "If exist, replace all the meat with beef",
+        "If duck meat exist, replace it with other meat",
+        "If fish exist, replace it with beef",
+        "If all the darkmeat if exist, with white meat",
+        "If seafood exist, replace it with other protein"
+
+    ]
     
     # Read the CSV file
     df = pd.read_csv(file_path)
