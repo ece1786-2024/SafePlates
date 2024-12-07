@@ -80,6 +80,8 @@ def read_and_save_recipes(file_name, output_file):
 
             if "It is not possible to generate a new recipe" in result:
                 count += 1
+                print(f"recipe at {index} is not possible")
+                print(f"Result:{result}\n")
 
         # Write the summary to the file
         file.write(f"\nCount of non-possible recipes: {count}\n")
@@ -90,4 +92,4 @@ def read_and_save_recipes(file_name, output_file):
 
 
 # Example usage
-read_and_save_recipes(dataset2, output2)
+read_and_save_recipes(dataset3, output3)
