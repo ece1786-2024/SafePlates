@@ -1,12 +1,12 @@
-from Dataset.all_test_cases  import safe, unsafe, caution
-from agent import evaluator
+from ..Dataset.all_test_cases  import safe, unsafe, caution
+from ..agent import evaluator
 
 
 if __name__ == "__main__":
     categories = ["safe", "Not Safe", "Caution"]
     datasets = [safe, unsafe, caution]
 
-    with open("test_result.txt", "w") as file:
+    with open("validator_test_result.txt", "w") as file:
         count = 0
         correct = 0
         

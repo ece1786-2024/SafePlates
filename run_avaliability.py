@@ -77,7 +77,8 @@ def read_and_save_recipes(file_name, output_file):
             # Prepare the inputs
             title = f"Title: {row['title']}"
             ingredients_and_directions = f"Ingredients: {row['ingredients']}\nDirections: {row['directions']}"
-            requirement = f"Requirement: {random.choice(special_requirements)}"
+            # requirement = f"Requirement: {random.choice(special_requirements)}"
+            requirement = f"Requirement: {row['requirment']}"
 
             # Process the inputs to get the result
             result = agent_flow(
@@ -108,4 +109,7 @@ def read_and_save_recipes(file_name, output_file):
 
 
 # Example usage
-read_and_save_recipes(dataset4, output4)
+# read_and_save_recipes(dataset1, output1)
+read_and_save_recipes(dataset2, output2)
+# read_and_save_recipes(dataset3, output3)
+# read_and_save_recipes(dataset4, output4)
