@@ -4,7 +4,7 @@ import time
 import gradio as gr
 
 from agent import generator, evaluator, agent_flow
-from test_cases import test_cases
+from Testing.test_cases import test_cases
 
 
 def get_user_input():
